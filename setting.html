@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 
-  <title>Xihu Dashboard</title>
+  <title>Settings</title>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
@@ -51,16 +51,16 @@
     }
 
     .top-bar #upgrade {
-            background: linear-gradient(91deg, #181729 -8.29%, #7c17cc 106.01%);
-            border-radius: 10px;
-            color: white;
-            border: none;
-            padding: 10px 20px 8px;
-            border-radius: 10px;
-            font-size: 13px;
-            cursor: pointer;
-            font-family: 'Poppins' !important;
-        }
+    background: linear-gradient(-79deg, rgba(7, 3, 30, 1) 0%, rgba(56, 39, 90, 1) 35%, rgba(4, 1, 23, 1) 100%);
+    border: 1px solid #ffffff12;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 20px 8px;
+    border-radius: 10px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Poppins' !important;
+}
 
         .top-bar #not-btn {
             padding: 8px 12px;
@@ -132,14 +132,10 @@
       color: white;
     }
 
-    .menu-item:hover {
-      background-color: #14233a3d;
-      border-radius: 6px;
-    }
-
     .hover-item {
       background-color: #14233a63;
       border-radius: 6px;
+      background: linear-gradient(71deg, rgb(7 3 30 / 98%) 0%, rgb(56 39 90 / 41%) 35%, rgb(4 1 23 / 74%) 100%);
     }
 
     .content {
@@ -692,33 +688,351 @@
       display: flex;
       flex-direction: column;
       margin-top: 13px;
-      }
-    #link-input {
-      width: 100%;
-      padding: 10px;
-      outline: none;
-      font-size: 0.8rem;
-      background-color: #0c0c0c;
-      border: 2px solid #212121;
-      border-radius: 5px;
-      /* flex-grow: 0; */
-      color: #ffff;
-      margin-bottom: 15px;
-      align-self: flex-start;
-      outline: none;
-    }
+  }
+#link-input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    font-size: 0.8rem;
+    background-color: #0c0c0c;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    flex-grow: 0;
+    color: #ffff;
+    margin-bottom: 10px;
+    align-self: flex-start;
+    outline: none;
+}
 
-    /* Align label to the left */
-    label {
-      align-self: flex-start;
-      margin-left: 3px;
-      color: #979797;
-      margin-bottom: 2px; /* Add some space between label and input */
-    }
+/* Align label to the left */
+label {
+  align-self: flex-start;
+  margin-bottom: 5px; /* Add some space between label and input */
+}
 
-    .iconify {
-      opacity: 0.5; /* You can adjust the value to make it lighter or darker */
-    }
+.iconify {
+  opacity: 0.5; /* You can adjust the value to make it lighter or darker */
+}
+/*NEW */
+
+.new-section {
+    background-color: #181819c9;
+    border-radius: 15px;
+    padding: 6px;
+    margin: 20px 0;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative; /* Added for positioning the image */
+}
+
+.premium-offer {
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(-79deg, rgba(7, 3, 30, 1) 0%, rgba(56, 39, 90, 1) 35%, rgba(4, 1, 23, 1) 100%);
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.premium-text {
+    text-align: center;
+    margin-top: 60px; /* Space for the hanging image */
+    position: relative; /* For positioning the text above the image */
+    z-index: 1; /* Ensure the text is above the image */
+}
+
+.premium-text p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+.premium-text span {
+    color: #ccc;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.premium-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute; /* Allows the image to hang off */
+    top: -30px; /* Adjust this value to control how much the image hangs off */
+    z-index: 0; /* Ensure the image is behind the text */
+}
+
+.visit-button {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    color: white;
+    background: linear-gradient(-79deg, rgba(7, 3, 30, 1) 0%, rgba(56, 39, 90, 1) 35%, rgba(4, 1, 23, 1) 100%);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.visit-button:hover {
+    background: linear-gradient(-79deg, rgba(7, 3, 30, 0.87) 0%, rgba(56, 39, 90, 0.849) 35%, rgba(4, 1, 23, 0.61) 100%);
+}
+
+.visit-button i {
+    margin-right: 5px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute space between items */
+    width: 100%;
+    background-color: #0e0e0e;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.user-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the green dot */
+    width: 12px; /* Same as the width of the green dot */
+    height: 100%; /* Stretch to the height of the user-info */
+}
+
+.user-status {
+    width: 12px;
+    height: 12px;
+    background-color: #00ff00; /* Online status indicator */
+    border-radius: 50%;
+    flex-shrink: 0; /* Prevent the dot from shrinking */
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    overflow: hidden;
+    margin-left: 16px;
+    width: 100%;
+}
+
+.username,
+.user-id {
+    color: white;
+    margin: 0;
+    font-size: 16px;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Show ellipsis when text overflows */
+}
+
+.options-button {
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 20px;
+}
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="sidebar-div">
+      <div>
+        <button id="cross-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 15 15">
+            <path fill="currentColor"
+              d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27" />
+          </svg>
+        </button>
+        <div class="logo-container">
+          <img id="logo-img" src="logo.png" alt="" />
+          <p id="logo-heading">twiz</p>
+        </div>
+        <div class="gradient-background">
+          <img id="gradient" src="Gradient1.png" alt="" />
+          <div class="profile-card">
+            <img src="https://i.pinimg.com/originals/b8/4c/15/b84c1524359fe01b397af3ae210c4f36.gif"
+              alt="Profile Picture" />
+            <p class="card-heading">Jacob Jones</p>
+            <button>View Profile</button>
+          </div>
+        </div>
+        <div class="menubar">
+          <div class="menu-item ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+              <path fill="white" d="M3 13h8V3H3zm0 8h8v-6H3zm10 0h8V11h-8zm0-18v6h8V3z" />
+            </svg>
+            <a href="dashboard.html">Dashboard</a>
+          </div>
+          <div class="menu-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+              <path fill="white"
+                d="M2 6c0-1.505.78-3.08 2-4c0 .845.69 2 2 2a3 3 0 0 1 3 3c0 .386-.079.752-.212 1.091a74.515 74.515 0 0 1 2.191 1.808l-2.08 2.08a75.852 75.852 0 0 1-1.808-2.191A2.977 2.977 0 0 1 6 10c-2.21 0-4-1.79-4-4m12.152 6.848l1.341-1.341A4.446 4.446 0 0 0 17.5 12A4.5 4.5 0 0 0 22 7.5c0-.725-.188-1.401-.493-2.007L18 9l-2-2l3.507-3.507A4.446 4.446 0 0 0 17.5 3A4.5 4.5 0 0 0 13 7.5c0 .725.188 1.401.493 2.007L3 20l2 2l6.848-6.848a68.562 68.562 0 0 0 5.977 5.449l1.425 1.149l1.5-1.5l-1.149-1.425a68.562 68.562 0 0 0-5.449-5.977" />
+            </svg>
+            <a href="customize.html">Customize</a>
+          </div>
+          <div class="menu-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+              <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 5a2 2 0 1 0 4 0a2 2 0 1 0-4 0M3 19a2 2 0 1 0 4 0a2 2 0 1 0-4 0m14 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0m-8-5a3 3 0 1 0 6 0a3 3 0 1 0-6 0m3-7v4m-5.3 6.8l2.8-2m7.8 2l-2.8-2" />
+            </svg>
+            <a href="social.html">Socials</a>
+          </div>
+          <div class="menu-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><circle cx="8" cy="26" r="1" fill="currentColor"/><path fill="currentColor" d="M5 30h22c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2m0-6h22v4H5zm18-4H9c-3.31 0-6-2.69-6-6c0-3.05 2.29-5.58 5.25-5.95C9.13 4.55 12.33 2 16 2s6.87 2.55 7.75 6.05C26.71 8.42 29 10.95 29 14c0 3.31-2.69 6-6 6M8.95 10A4.01 4.01 0 0 0 5 14c0 2.21 1.79 4 4 4h14c2.21 0 4-1.79 4-4a4 4 0 0 0-3.94-4l-.12.01l-.88.02l-.12-.88C21.51 6.21 18.96 4 16 4s-5.51 2.21-5.93 5.15l-.12.88z"/></svg>
+            <a href="hosting.html">Hosting</a>
+          </div>
+        </div>
+      </div>
+      <div class="card-outer">
+
+        <div class="card">
+          <div class="inner-card">
+            <img id="gradient-card" src="Gradient1.png" alt="" />
+            <div class="content-card">
+              <p>Join Our Discord Server Today!</p>
+              <div class="illustration">
+                <img src="discordLogo.png" alt="Person with a cup">
+              </div>
+
+
+            </div>
+          </div>
+          <button class="action-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+              <path fill="white"
+                d="m19.164 12l-6.207-6.207l-1.414 1.414L16.336 12l-4.793 4.793l1.414 1.414zm-5.65 0L7.307 5.793L5.893 7.207L10.686 12l-4.793 4.793l1.414 1.414z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="top-bar">
+    <button id="hamburger-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+        <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M3 17h18M3 12h18M3 7h18" />
+      </svg>
+    </button>
+    <div class="welcome">Welcome, Jacob</div>
+    <div class="top-btns">
+      <a href="shop.html" style="text-decoration: none;">
+        <button id="upgrade">
+          <span class="iconify" data-icon="mdi-cart" data-inline="false" style="font-size: 14px; margin-bottom: -2px;"></span>
+          Shop
+        </button>
+      </a>
+      <button id="not-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" style="margin-top: 3px;">
+          <g fill="none">
+            <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+            <path fill="white" d="M15 19a2 2 0 0 1-1.85 1.995L13 21h-2a2 2 0 0 1-1.995-1.85L9 19zM12 2a7 7 0 0 1 6.996 6.76L19 9v3.764l1.822 3.644a1.1 1.1 0 0 1-.869 1.586l-.115.006H4.162a1.1 1.1 0 0 1-1.03-1.487l.046-.105L5 12.764V9a7 7 0 0 1 7-7" />
+          </g>
+        </svg>
+      </button>      
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="socials">
+      <h2>
+        <span>Account Settings</span>
+      </h2>
+      <div class="connects-container">
+        <div class="social-container">
+          <label for="link-input">
+            <span class="iconify" data-icon="fa-solid:user"></span>
+            Username
+          </label>
+          <input id="link-input" name="" type="text" placeholder="" />
+          <label for="link-input">
+            <span class="iconify" data-icon="fa-solid:envelope"></span>
+            Email
+          </label>
+          <input id="link-input" name="" type="text" placeholder="" />
+          <label for="link-input">
+            <span class="iconify" data-icon="fa-solid:portrait"></span>
+            Alias
+          </label>
+          <input id="link-input" name="" type="text" placeholder="" />
+    </div>
+  </div>
+  <div class="settingsmulti-container">
+    <div class="multi-factor-authentication" style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <h2 class="authentication-heading">Multi-factor Authentication</h2>
+            <p class="authentication-description">Enhance security with multi-factor authentication.</p>
+        </div>
+        
+        <!-- Toggle switch -->
+        <div class="toggle-switch-container" style="width: 50px;"> <!-- Adjust width as needed -->
+            <label class="toggle-switch" style="margin-top: 10px;margin-left: -12px;"> <!-- Adjust margin-top value as needed -->
+                <input type="checkbox" style="width: 30px; height: 15px;"> <!-- Adjust width and height as needed -->
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="settingsmulti-container">
+  <div class="multi-factor-authentication" style="display: flex; justify-content: space-between; align-items: center;">
+      <div>
+          <h2 class="authentication-heading">Language Selection</h2>
+          <p class="authentication-description">Select your preferred language.</p>
+      </div>
+      
+      <!-- Language dropdown menu -->
+      <div class="language-dropdown-container">
+          <label for="language-select" >Select Language:</label>
+          <select id="language-select" style="background: #141414;border: 1px solid #202020;color: #979797;border-radius: 10px;outline: none;">
+              <option value="english">English</option>
+              <option value="spanish">Spanish</option>
+              <option value="french">French</option>
+              <!-- Add more language options as needed -->
+          </select>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="settingsmulti-container">
+  <div class="stacked-buttons multi-factor-authentication" style="display: flex; justify-content: center;">
+    <!-- Change Email Button -->
+    <button class="change-email-button auth-button" style="background: #141414;border: 1px solid #202020;border-radius: 10px;padding: 8px 15px;cursor: pointer;margin-right: 10px;color: white;overflow: hidden !important;">
+      Change Email
+    </button>
+
+    <!-- Change Password Button -->
+    <button class="change-password-button auth-button" style="color: white; background: #141414;border: 1px solid #202020;border-radius: 10px; padding: 8px 15px; cursor: pointer; margin-right: 10px;">
+      Change Password
+    </button>
+
+    <!-- Discord Button -->
+    <button class="discord-button auth-button" style="color: white; background: #141414;border: 1px solid #202020;border-radius: 10px; padding: 8px 15px; cursor: pointer;">
+      Connect Discord
+    </button>
+  </div>
+</div>
+
+
+
+
+
+<style>
 
 input:-webkit-autofill,
     input:-webkit-autofill:hover,
@@ -730,10 +1044,22 @@ input:-webkit-autofill,
       box-shadow: inset 0 0 20px 20px #0c0c0c;
     }
 .auth-button {
-  border: 1px solid #666 !important;
+    width: 150px; /* Set a specific width for all buttons */
   }
 
-  
+  @media (max-width: 768px) {
+    .stacked-buttons {
+      flex-direction: column;
+      align-items: center; /* Align buttons in the center when stacked */
+    }
+    .stacked-buttons .auth-button {
+      margin-bottom: 10px; /* Add some spacing between stacked buttons */
+      width: 100%; /* Set width to 100% for stacked buttons */
+    }
+    .discord-button{
+      margin-left: -8px;
+    }
+  }
 .language-select {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -746,7 +1072,7 @@ input:-webkit-autofill,
         border-radius: 4px;
         padding: 8px;
         font-size: 14px;
-        color: #ccc;
+        color: #333;
         cursor: pointer;
         outline: none;
     }
@@ -835,8 +1161,8 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-.authentication-heading, .language-select-heading {
-    font-size: 16px;
+.authentication-heading {
+    font-size: 19px;
     color: #fafafa;
     margin-bottom: 10px;
     font-weight: 500;
@@ -844,10 +1170,11 @@ input:checked + .slider:before {
     margin-top: -14px;
 }
 .authentication-description {
-    font-size: 12px;
-    color: #979797;
+    font-size: 15px;
+    color: #666;
     margin-top: -15px;
     margin-bottom: -12px;
+    color: #979797;
     font-weight: 450;
 }
 
@@ -872,230 +1199,10 @@ input:checked + .slider:before {
     top: 0;
     padding: 20px;
 }
-@media (max-width: 768px) {
-    .stacked-buttons {
-      flex-direction: row;
-      align-items: center;
-    }
-    .social-btns {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-    /* .social-btns button{
-      padding: 10px !important;
-    } */
-    .stacked-buttons .auth-button {
-      margin-bottom: 10px; /* Add some spacing between stacked buttons */
-      width: 100%; /* Set width to 100% for stacked buttons */
-    }
-    /* .discord-button{
-      margin-left: -8px;
-    } */
-  }
-@media (max-width: 425px) {
-    .stacked-buttons {
-      flex-direction: row;
-      align-items: center;
-    }
-    .stacked-buttons{
-      padding: 0px !important;
-      margin: 0px !important;
-    }
-    /* .discord-button{
-      margin-left: -8px;
-    } */
-  }
-  </style>
-</head>
-
-<body>
-  <div class="sidebar">
-    <div class="sidebar-div">
-      <div>
-        <button id="cross-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 15 15">
-            <path fill="currentColor"
-              d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27" />
-          </svg>
-        </button>
-        <div class="logo-container">
-          <img id="logo-img" src="logo.png" alt="" />
-          <p id="logo-heading">twiz</p>
-        </div>
-        <div class="gradient-background">
-          <img id="gradient" src="Gradient.png" alt="" />
-          <div class="profile-card">
-            <img src="https://i.pinimg.com/originals/b8/4c/15/b84c1524359fe01b397af3ae210c4f36.gif"
-              alt="Profile Picture" />
-            <p class="card-heading">Jacob Jones</p>
-            <button>View Profile</button>
-          </div>
-        </div>
-        <div class="menubar">
-          <div class="menu-item ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-              <path fill="white" d="M3 13h8V3H3zm0 8h8v-6H3zm10 0h8V11h-8zm0-18v6h8V3z" />
-            </svg>
-            <a href="Dashboard.html">Dashboard</a>
-          </div>
-          <div class="menu-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-              <path fill="white"
-                d="M2 6c0-1.505.78-3.08 2-4c0 .845.69 2 2 2a3 3 0 0 1 3 3c0 .386-.079.752-.212 1.091a74.515 74.515 0 0 1 2.191 1.808l-2.08 2.08a75.852 75.852 0 0 1-1.808-2.191A2.977 2.977 0 0 1 6 10c-2.21 0-4-1.79-4-4m12.152 6.848l1.341-1.341A4.446 4.446 0 0 0 17.5 12A4.5 4.5 0 0 0 22 7.5c0-.725-.188-1.401-.493-2.007L18 9l-2-2l3.507-3.507A4.446 4.446 0 0 0 17.5 3A4.5 4.5 0 0 0 13 7.5c0 .725.188 1.401.493 2.007L3 20l2 2l6.848-6.848a68.562 68.562 0 0 0 5.977 5.449l1.425 1.149l1.5-1.5l-1.149-1.425a68.562 68.562 0 0 0-5.449-5.977" />
-            </svg>
-            <a href="customize.html">Customize</a>
-          </div>
-          <div class="menu-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-              <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M10 5a2 2 0 1 0 4 0a2 2 0 1 0-4 0M3 19a2 2 0 1 0 4 0a2 2 0 1 0-4 0m14 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0m-8-5a3 3 0 1 0 6 0a3 3 0 1 0-6 0m3-7v4m-5.3 6.8l2.8-2m7.8 2l-2.8-2" />
-            </svg>
-            <a href="social.html">Socials</a>
-          </div>
-          <div class="menu-item hover-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-              <path fill="white"
-                d="M19.9 12.66a1 1 0 0 1 0-1.32l1.28-1.44a1 1 0 0 0 .12-1.17l-2-3.46a1 1 0 0 0-1.07-.48l-1.88.38a1 1 0 0 1-1.15-.66l-.61-1.83a1 1 0 0 0-.95-.68h-4a1 1 0 0 0-1 .68l-.56 1.83a1 1 0 0 1-1.15.66L5 4.79a1 1 0 0 0-1 .48L2 8.73a1 1 0 0 0 .1 1.17l1.27 1.44a1 1 0 0 1 0 1.32L2.1 14.1a1 1 0 0 0-.1 1.17l2 3.46a1 1 0 0 0 1.07.48l1.88-.38a1 1 0 0 1 1.15.66l.61 1.83a1 1 0 0 0 1 .68h4a1 1 0 0 0 .95-.68l.61-1.83a1 1 0 0 1 1.15-.66l1.88.38a1 1 0 0 0 1.07-.48l2-3.46a1 1 0 0 0-.12-1.17ZM18.41 14l.8.9l-1.28 2.22l-1.18-.24a3 3 0 0 0-3.45 2L12.92 20h-2.56L10 18.86a3 3 0 0 0-3.45-2l-1.18.24l-1.3-2.21l.8-.9a3 3 0 0 0 0-4l-.8-.9l1.28-2.2l1.18.24a3 3 0 0 0 3.45-2L10.36 4h2.56l.38 1.14a3 3 0 0 0 3.45 2l1.18-.24l1.28 2.22l-.8.9a3 3 0 0 0 0 3.98m-6.77-6a4 4 0 1 0 4 4a4 4 0 0 0-4-4m0 6a2 2 0 1 1 2-2a2 2 0 0 1-2 2" />
-            </svg>
-            <a href="setting.html">Settings</a>
-          </div>
-        </div>
-      </div>
-      <div class="card-outer">
-
-        <div class="card">
-          <div class="inner-card">
-            <img id="gradient-card" src="Gradient.png" alt="" />
-            <div class="content-card">
-              <p>Join Our Discord Server Today!</p>
-              <div class="illustration">
-                <img src="discordLogo.png" alt="Person with a cup">
-              </div>
 
 
-            </div>
-          </div>
-          <button class="action-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-              <path fill="white"
-                d="m19.164 12l-6.207-6.207l-1.414 1.414L16.336 12l-4.793 4.793l1.414 1.414zm-5.65 0L7.307 5.793L5.893 7.207L10.686 12l-4.793 4.793l1.414 1.414z" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="top-bar">
-    <button id="hamburger-btn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-        <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M3 17h18M3 12h18M3 7h18" />
-      </svg>
-    </button>
-    <div class="welcome">Welcome, Jacob</div>
-    <div class="top-btns">
-      <button id="upgrade">Upgrade</button>
-      <button id="not-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" style="margin-top: 3px;">
-          <g fill="none">
-            <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
-            <path fill="white" d="M15 19a2 2 0 0 1-1.85 1.995L13 21h-2a2 2 0 0 1-1.995-1.85L9 19zM12 2a7 7 0 0 1 6.996 6.76L19 9v3.764l1.822 3.644a1.1 1.1 0 0 1-.869 1.586l-.115.006H4.162a1.1 1.1 0 0 1-1.03-1.487l.046-.105L5 12.764V9a7 7 0 0 1 7-7" />
-          </g>
-        </svg>
-      </button>      
-    </div>
-  </div>
-
-  <div class="content">
-    <div class="socials">
-      <h2>
-        <span>Account Settings</span>
-      </h2>
-      <div class="connects-container">
-        <div class="social-container">
-          <label for="link-input">
-            <span style="margin-right: 10px;" class="iconify" data-icon="fa-solid:user"></span>
-            Username
-          </label>
-          <input id="link-input" name="" type="text" placeholder="" />
-          <label for="link-input">
-            <span style="margin-right: 10px;" class="iconify" data-icon="fa-solid:envelope"></span>
-            Email
-          </label>
-          <input id="link-input" name="" type="text" placeholder="" />
-          <label for="link-input">
-            <span style="margin-right: 10px;" class="iconify" data-icon="fa-solid:portrait"></span>
-            Alias
-          </label>
-          <input id="link-input" name="" type="text" placeholder="" />
-    </div>
-  </div>
-  <div class="settingsmulti-container">
-    <div class="multi-factor-authentication" style="display: flex; justify-content: space-between; align-items: center;">
-        <div>
-            <h2 class="authentication-heading">Multi-factor Authentication</h2>
-            <p class="authentication-description">Enhance security with multi-factor authentication.</p>
-        </div>
-        
-        <!-- Toggle switch -->
-        <div class="toggle-switch-container" style="width: 50px;"> <!-- Adjust width as needed -->
-            <label class="toggle-switch" style="margin-top: 10px;margin-left: -12px;"> <!-- Adjust margin-top value as needed -->
-                <input type="checkbox" style="width: 30px; height: 15px;"> <!-- Adjust width and height as needed -->
-                <span class="slider"></span>
-            </label>
-        </div>
-    </div>
-</div>
-
-<div class="settingsmulti-container">
-  <div class="multi-factor-authentication" style="display: flex; justify-content: space-between; align-items: center;">
-      <div>
-          <h2 class="authentication-heading">Language Selection</h2>
-          <p class="authentication-description">Select your preferred language.</p>
-      </div>
-      
-      <!-- Language dropdown menu -->
-      <div class="language-dropdown-container">
-          <label class="language-select-heading" for="language-select" >Select Language:</label>
-          <select id="language-select" style="background: #141414;border: 1px solid #202020;color: #979797;border-radius: 10px;outline: none;">
-              <option value="english">English</option>
-              <option value="spanish">Spanish</option>
-              <option value="french">French</option>
-              <!-- Add more language options as needed -->
-          </select>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="settingsmulti-container">
-  <div class="stacked-buttons multi-factor-authentication" style="display: flex; justify-content: center;">
-    <!-- Change Email Button -->
-    <button class="change-email-button auth-button" style="background: #141414;border: 1px solid #666;border-radius: 10px;padding: 8px 15px;cursor: pointer;margin-right: 10px;color: white;overflow: hidden !important;">
-      Change Email
-    </button>
-    <!-- Change Password Button -->
-    <button class="change-password-button auth-button" style="color: white; background: #141414;border: 1px solid #666;border-radius: 10px; padding: 8px 15px; cursor: pointer; margin-right: 10px;">
-      Change Password
-    </button>
-
-    <div class="social-btns">
-      <!-- Discord Button -->
-      <button class="discord-button auth-button" style="background: linear-gradient(91deg, #181729 -8.29%, #7c17cc 106.01%);border: 1px solid #666;border-radius: 10px; padding: 8px 25px; cursor: pointer;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" viewBox="0 0 24 24"><path fill="#ffffff" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02M8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12m6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12"/></svg>    
-      </button>
-      <!-- Github Button -->
-      <button class="discord-button auth-button" style="background: linear-gradient(91deg, #181729 -8.29%, #666 76.01%);border: 1px solid #666;border-radius: 10px; margin: 0px 5px 10px 5px; padding: 8px 25px; cursor: pointer;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" viewBox="0 0 24 24"><path fill="#ffffff" d="M8 0c4.42 0 8 3.58 8 8a8.01 8.01 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38c0-.27.01-1.13.01-2.2c0-.75-.25-1.23-.54-1.48c1.78-.2 3.65-.88 3.65-3.95c0-.88-.31-1.59-.82-2.15c.08-.2.36-1.02-.08-2.12c0 0-.67-.22-2.2.82c-.64-.18-1.32-.27-2-.27s-1.36.09-2 .27c-1.53-1.03-2.2-.82-2.2-.82c-.44 1.1-.16 1.92-.08 2.12c-.51.56-.82 1.28-.82 2.15c0 3.06 1.86 3.75 3.64 3.95c-.23.2-.44.55-.51 1.07c-.46.21-1.61.55-2.33-.66c-.15-.24-.6-.83-1.23-.82c-.67.01-.27.38.01.53c.34.19.73.9.82 1.13c.16.45.68 1.31 2.69.94c0 .67.01 1.3.01 1.49c0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8"/></svg>  
-      </button>
-      <!-- Google Button -->
-      <button class="discord-button auth-button" style="background: #fff;border: 1px solid #666;border-radius: 10px; padding: 8px 25px; cursor: pointer;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="#50b4f2" d="M12 5.5a6.5 6.5 0 1 0 6.326 8H13a1.5 1.5 0 0 1 0-3h7a1.5 1.5 0 0 1 1.5 1.5a9.5 9.5 0 1 1-2.801-6.736a1.5 1.5 0 1 1-2.116 2.127A6.475 6.475 0 0 0 12 5.5"/></g></svg>    
-      </button>
-    </div>
-</div>
-
+</style>
   <script>
 
     document.addEventListener("DOMContentLoaded", function () {
