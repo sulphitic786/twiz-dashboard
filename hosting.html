@@ -1,0 +1,2411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+    <title>Hosting</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #0a0a0a;
+        color: white;
+        margin: 0;
+        padding: 0;
+      }
+
+      @media (max-width: 1041px) {
+        .account-container {
+          margin-top: 40px;
+          width: 100% !important;
+        }
+      }
+
+      .sidebar {
+        background-color: #0e0e0e;
+        width: 220px;
+        height: 100%;
+        position: fixed;
+        padding-bottom: 4%;
+        padding-top: 10%;
+        border-left: hidden;
+        border-top: hidden;
+        border-bottom: hidden;
+        padding-top: 20px;
+        overflow: hidden;
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+
+      .top-bar {
+        padding: 20px 30px;
+        margin-left: 220px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-top: 40px;
+      }
+
+      .top-bar #upgrade {
+        background: linear-gradient(352deg, rgb(100, 34, 102) 0%, rgb(56 39 90 / 93%) 35%, rgb(4 1 23) 100%);        border: 1px solid #ffffff12;
+        border-radius: 10px;
+        color: white;
+        padding: 10px 20px 8px;
+        border-radius: 10px;
+        font-size: 13px;
+        cursor: pointer;
+        font-family: "Poppins" !important;
+      }
+
+      .top-bar #not-btn {
+        padding: 8px 12px;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-left: 5px;
+        background: #141414;
+        border: 1px solid #202020;
+      }
+
+      .profile-card {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .profile-card img {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+      }
+
+      .profile-card .card-heading {
+        margin: 10px 0 0 0;
+        font-size: 17px;
+      }
+
+      .profile-card p {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+
+      .profile-card button {
+        padding: 6px;
+        font-size: 10px;
+        background: #141414;
+        border: 1px solid #202020;
+        border-radius: 5px;
+        color: #d1d1d1;
+      }
+
+      .menubar {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .menubar a {
+        margin-left: 7px;
+      }
+
+      .menu-item {
+        font-size: 16px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-left: 9px;
+        padding-right: 9px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+      }
+
+      .menu-item a {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        text-decoration: none;
+        color: white;
+      }
+
+      .hover-item {
+        background-color: #14233a63;
+        border-radius: 6px;
+        background: linear-gradient(
+          71deg,
+          rgb(7 3 30 / 98%) 0%,
+          rgb(56 39 90 / 41%) 35%,
+          rgb(4 1 23 / 74%) 100%
+        );
+      }
+
+      .content {
+        margin-left: 250px;
+        padding: 20px;
+      }
+
+      .welcome {
+        font-size: 24px;
+      }
+
+      .top-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .logo-container img {
+        width: 100%;
+      }
+
+      .gradient-background {
+        position: relative;
+        margin-bottom: 45px;
+      }
+
+      .profile-card {
+        position: relative;
+        z-index: 2;
+        /* Ensures the profile card is above the background image */
+      }
+
+      .gradient-background #gradient {
+        position: absolute;
+        top: -140px;
+        left: -60px;
+        width: 310%;
+        z-index: -1;
+        opacity: 40%;
+      }
+
+      /* ----- Check Boxes Start----- */
+      .custom-checkbox input[type="checkbox"] {
+        background-color: rgb(100, 34, 102);
+      }
+      .file-length input:focus {
+        border: 1px solid #333 !important;
+      }
+      .file-length label {
+        text-transform: capitalize;
+        font-size: 14px;
+      }
+      .file-length-main {
+        display: flex;
+        gap: 30px;
+      }
+      .embeded-layout {
+        margin: 40px 0px;
+      }
+      /* Hide the default checkbox */
+      .custom-checkbox input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #000; /* Adjust the border color as needed */
+        border-radius: 3px; /* Optional: for rounded corners */
+        cursor: pointer;
+        position: relative;
+        transition: all 1s;
+      }
+
+      /* Style the checked state */
+      .custom-checkbox input[type="checkbox"]:checked {
+        background-color: rgb(
+          100,
+          34,
+          102
+        ); /* Change to desired background color */
+        border-color: rgb(100, 34, 102);
+        transition: all 1s;
+      }
+
+      /* Optional: Add a checkmark (you can use a background image or CSS) */
+      .custom-checkbox input[type="checkbox"]:checked::after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 6px;
+        width: 4px;
+        height: 8px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        transition: all 1s;
+      }
+      /* ---- Check Boxes End ------- */
+
+      #cross-btn {
+        display: flex;
+        background: #141414;
+        border: 2px solid #202020;
+        border-radius: 9px;
+        color: #ffffff;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+        margin-left: auto;
+        display: none;
+      }
+
+      /* Styles that apply to all screen sizes */
+      .sidebar {
+        display: block;
+        /* Show sidebar by default */
+      }
+
+      #hamburger-btn {
+        display: none;
+        /* Hide hamburger button by default */
+      }
+
+      #cross-btn {
+        display: none;
+        /* Ensure cross button is hidden by default */
+      }
+
+      /* Small screens */
+      @media (max-width: 1041px) {
+        .sidebar {
+          width: 220px;
+          /* Set sidebar width */
+          position: fixed;
+          box-shadow: 10px 0 10px rgba(0, 0, 0, 0.35);
+          top: 0;
+          left: 0;
+          /* Position sidebar to the left */
+          height: 100%;
+          /* Full height */
+          z-index: 1000;
+          /* Ensure sidebar is above other content */
+          transform: translateX(-100%);
+          /* Start off-screen */
+          transition: transform 0.3s ease-in-out;
+          /* Smooth transition */
+          display: block;
+          /* Ensure sidebar is display block for animation */
+          border-radius: 30px;
+        }
+
+        .sidebar.active {
+          transform: translateX(0%);
+          /* Slide in */
+        }
+
+        #hamburger-btn {
+          display: block;
+          z-index: 1001;
+          border-radius: 9px;
+          border: none;
+          background: #141414;
+          border: 2px solid #202020;
+          padding: 5px 8px;
+          position: absolute;
+          left: 25px;
+        }
+
+        #cross-btn {
+          display: none;
+          /* Initially hidden, shown when sidebar is active */
+        }
+
+        #cross-btn.show {
+          display: flex;
+          /* Show when sidebar is open */
+        }
+
+        .top-bar {
+          margin-left: 0px;
+          display: flex;
+          align-items: center;
+          padding-top: 40px;
+          justify-content: center;
+        }
+
+        .top-btns {
+          display: none;
+        }
+
+        /* ----------------------------------dashboard-------------------- */
+        .content {
+          margin-left: 0px;
+        }
+
+        .info-card {
+          flex-basis: 100% !important;
+          margin-bottom: 20px;
+        }
+
+        .top-info {
+          flex-wrap: wrap;
+        }
+
+        .dashboard {
+          height: fit-content !important;
+          flex-wrap: wrap;
+        }
+
+        .chart-upper {
+          width: 100% !important;
+        }
+
+        .notification {
+          width: 100% !important;
+
+          margin: 20px auto;
+        }
+
+        .lower-cards {
+          flex-direction: column-reverse;
+          align-items: center;
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        .account-container {
+          margin-top: 40px;
+        }
+
+        .invoices-container {
+          width: 100% !important;
+          height: 460px;
+        }
+      }
+
+      /* Hide the cross button on screens wider than 767px */
+      @media (min-width: 1042px) {
+        #cross-btn {
+          display: none !important;
+          /* Use !important to override inline styles if necessary */
+        }
+
+        #hamburger-btn {
+          display: none !important;
+          /* Ensure the hamburger button is also hidden on larger screens */
+        }
+
+        .sidebar {
+          transform: none !important;
+          /* Reset any transformation applied on smaller screens */
+          /* display: block !important; */
+          /* Ensure the sidebar is always shown on larger screens */
+        }
+      }
+
+      .top-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .info-card {
+        padding: 15px;
+        border-radius: 20px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        flex-basis: calc(25% - 10px);
+        text-align: center;
+        position: relative;
+        background-color: #111111;
+      }
+
+      .icon-heading {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .icons-content {
+        justify-content: start;
+        align-items: start;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .info-card h4 {
+        font-size: 18px;
+        text-transform: uppercase;
+        margin: 0px;
+        font-size: 16px;
+        color: white;
+      }
+      .info-card h3 {
+        font-size: 11px;
+        text-transform: uppercase;
+        /* margin-left: 10px; */
+        margin: 0px;
+        color: #cecece;
+        text-align: start;
+        font-weight: 400;
+        text-transform: capitalize;
+      }
+
+      .info-card p {
+        font-size: 18px;
+        margin: 0;
+        display: flex;
+        font-weight: bold;
+        color: #999;
+        margin-top: 18px;
+        justify-content: flex-end;
+      }
+
+      .icons-button {
+        display: flex;
+        justify-content: end;
+      }
+      .info-card button {
+        font-size: 16px;
+        margin-top: 10px;
+        display: flex;
+        /* font-weight: bold; */
+        color: white;
+        background: linear-gradient(
+          -79deg,
+          rgb(44 24 158 / 19%) 0%,
+          rgb(51 0 153 / 30%) 35%,
+          rgb(95 32 111 / 44%) 100%
+        );
+        justify-content: flex-end;
+        border-radius: 20px;
+        border: none;
+        text-transform: uppercase;
+        padding: 5px 15px !important;
+      }
+
+      .dashboard {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin: 13px;
+        overflow: hidden;
+        margin-left: 0px;
+        margin-right: 0px;
+        display: flex;
+        justify-content: space-between;
+        height: 290px;
+        margin-top: -6px;
+      }
+
+      .chart {
+        margin-bottom: 20px;
+      }
+
+      .chart-upper {
+        width: 69%;
+        background-color: #111;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 13px;
+        color: white;
+      }
+
+      .chart p {
+        /* margin-left: 50px; */
+        font-size: 21px;
+        line-height: 30px;
+        margin-bottom: 0px;
+        color: #999;
+      }
+
+      .notification {
+        padding: 20px;
+        background: linear-gradient(
+          -79deg,
+          rgba(7, 3, 30, 1) 0%,
+          rgba(56, 39, 90, 1) 35%,
+          rgba(4, 1, 23, 1) 100%
+        );
+        background-origin: border-box;
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+        width: 30%;
+      }
+
+      .notification:before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        background-color: rgba(255, 255, 255, 0.2);
+        height: 200px;
+        width: 200px;
+        border-radius: 100%;
+        transform: rotate(45deg);
+      }
+
+      .notification h4 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .notification p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        color: #999999;
+      }
+
+      .notification a {
+        text-decoration: none;
+        color: white;
+        background: linear-gradient(
+          -79deg,
+          rgba(7, 3, 30, 1) 0%,
+          rgba(56, 39, 90, 1) 35%,
+          rgba(4, 1, 23, 1) 100%
+        );
+        border: 1px solid #ffffff12;
+        background-origin: border-box;
+        padding: 10px 15px;
+        border-radius: 24px;
+        display: inline-block;
+        margin-top: 70px;
+      }
+
+      .account-container {
+        background-color: #111;
+        border-radius: 8px;
+        padding: 20px;
+        width: 27%;
+        /* height: 460px; */
+      }
+
+      .account-header {
+        margin-bottom: 20px;
+      }
+
+      .account-header h2 {
+        margin: 0;
+      }
+
+      .account-header p {
+        color: #b9bbbe;
+        font-size: 14px;
+      }
+
+      .account-action {
+        background: #141414;
+
+        border-radius: 22px;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .account-action:hover {
+        border: 1px solid #202020;
+      }
+
+      .account-action i {
+        margin-right: 10px;
+      }
+
+      .account-action span {
+        flex-grow: 1;
+      }
+
+      .connection-container {
+        margin-top: 18px;
+      }
+
+      .connection-header {
+        color: #b9bbbe;
+        font-size: 14px;
+        margin-bottom: 6px;
+        margin-top: -10px;
+      }
+
+      .connect-button {
+        color: white;
+        text-align: center;
+        margin-bottom: 8px;
+        padding: 10px 0;
+        border-radius: 27px;
+        display: block;
+        text-decoration: none;
+        border: 1px solid #202020;
+        background-image: linear-gradient(120deg, #626cfdb4, #535efa48);
+      }
+
+      .invoices-container {
+        background-color: #111;
+        border-radius: 8px;
+        padding: 20px;
+        width: 72%;
+        height: 340px;
+      }
+
+      .invoice-cards {
+        height: 90%;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      .invoice-card {
+        background: #141414;
+        border-radius: 41px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        color: white;
+        overflow: hidden !important;
+      }
+      .invoice-card:hover {
+        border: 1px solid #202020;
+      }
+
+      .invoice-card img {
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .invoice-card .username {
+        flex-grow: 1;
+      }
+
+      .invoice-card .price {
+        margin-right: 10px;
+      }
+
+      .invoice-action {
+        color: white;
+        padding: 5px 7px;
+        border-radius: 29px;
+        cursor: pointer;
+        background: #0e0e0e;
+        border: 1px solid #202020;
+      }
+
+      .invoice-header {
+        color: white;
+        margin-bottom: 3px;
+        margin-top: -5px;
+      }
+      .lower-cards {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 0 30px 0;
+      }
+
+      #logo-img {
+        width: 38px;
+        height: 38px;
+      }
+
+      #logo-heading {
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      /* Thin scrollbar */
+      ::-webkit-scrollbar {
+        width: 5px;
+        /* Width of the scrollbar */
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #0c0d0e;
+        /* Background color of the track */
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #222;
+        /* Color of the scrollbar handle */
+      }
+
+      /*------------------------------------------- sidebar button styling----------------------------------------------- */
+      .card {
+        border-radius: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        color: white;
+        text-align: center;
+        box-sizing: border-box;
+        position: relative;
+        background: #141414;
+        border: 1px solid #202020;
+      }
+
+      .content-card p {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        letter-spacing: 1px;
+        font-weight: 600;
+      }
+
+      .illustration {
+        margin: 20px 0;
+      }
+
+      .illustration img {
+        width: 100px;
+        height: auto;
+      }
+
+      .action-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .action-button button {
+        border: none;
+        background-color: #181818bd;
+        color: white;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .action-button button:focus {
+        outline: none;
+      }
+
+      .action-button {
+        position: relative;
+        margin-top: 20px;
+      }
+
+      .action-button {
+        border: none;
+        background-color: #181818bd;
+        color: white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        cursor: pointer;
+        position: absolute;
+        bottom: -21px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .action-button button:focus {
+        outline: none;
+      }
+
+      #gradient-card {
+        position: absolute;
+        top: -150px;
+        left: -310px;
+        width: 310%;
+        opacity: 40%;
+      }
+
+      .inner-card {
+        overflow: hidden;
+        position: relative;
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .sidebar-div {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .price {
+        color: #999;
+      }
+      .fas.fa-eye {
+        color: rgb(255, 255, 255); /* Change color */
+        font-size: 15px; /* Adjust size */
+        margin-left: 5px; /* Add some spacing between number and icon */
+      }
+
+      .second-part-top {
+        border-radius: 13px;
+        color: white;
+        display: flex;
+        gap: 20px;
+      }
+
+      .gallery-area {
+        background-color: #111;
+        border-radius: 20px;
+        padding: 12px;
+        display: flex;
+        gap: 20px;
+        width: 70%;
+      }
+      .gallery-area-2 {
+        width: 30%;
+        background-color: #111;
+        border-radius: 20px;
+      }
+      .password-protected {
+        width: 50%;
+      }
+      .password-protected h1 {
+        font-size: 16px;
+        color: white;
+        text-transform: capitalize;
+        margin: 0;
+        font-weight: 400;
+        /* padding-top: 10px; */
+        padding-bottom: 5px;
+      }
+      .password-protected .license {
+        font-size: 16px;
+        color: white;
+        text-transform: capitalize;
+        margin: 0;
+        font-weight: 400;
+        padding-top: 10px;
+        padding-bottom: 5px;
+      }
+      .password-feild input {
+        border: 1px solid rgb(21 21 21);
+        background-color: #0c0c0c;
+        border-radius: 10px;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .password-feild {
+        margin-bottom: 10px;
+      }
+
+      .select-feild h1 {
+        font-size: 16px;
+        color: white;
+        text-transform: capitalize;
+        margin: 0;
+        font-weight: 400;
+        /* padding-top: 10px; */
+      }
+      .select-feild select {
+        border: 1px solid rgb(21 21 21);
+        background-color: #0c0c0c;
+        border-radius: 10px;
+        width: 100%;
+        padding: 10px;
+        color: white;
+      }
+      .save-buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 11px;
+        margin: 38px 0px 10px 0px;
+      }
+      .save-button {
+        border: 1px solid rgb(21 21 21);
+        background-color: #181818;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        width: 35%;
+        padding: 5px;
+        gap: 9px;
+      }
+      .save-button button {
+        background: none !important;
+        border: none;
+        color: white;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .help-button {
+        background-color: #181818;
+        display: flex;
+        align-items: center;
+        width: 65%;
+        padding: 5px;
+        gap: 9px;
+        border-radius: 10px;
+      }
+
+      .help-button button {
+        background: none !important;
+        border: none;
+        color: white;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+      .extension {
+        width: 50%;
+      }
+      .extension h1 {
+        font-size: 16px;
+        color: white;
+        text-transform: capitalize;
+        margin: 0;
+        font-weight: 400;
+        padding-bottom: 5px;
+      }
+      .extension .upload-tool {
+        font-size: 16px;
+        color: white;
+        text-transform: capitalize;
+        margin: 0;
+        font-weight: 400;
+        margin-top: 12px;
+        padding-bottom: 5px;
+      }
+
+      .extension a {
+        width: 100%;
+        text-decoration: none;
+        color: white;
+        border: 1px solid rgb(21 21 21);
+        background-color: #0c0c0c;
+        border-radius: 10px;
+        text-transform: capitalize;
+        /* font-size: 24px; */
+      }
+      .erase-all {
+        margin-top: 35px;
+      }
+      .gallery-area-2 {
+        padding: 10px;
+      }
+      .gallery-area-2 h1 {
+        font-size: 16px;
+        color: white;
+        text-transform: capitalize;
+        margin: 0;
+        font-weight: 400;
+        padding-bottom: 5px;
+      }
+      .recent-upload {
+        display: flex;
+        justify-content: space-between;
+        background-color: #0c0c0c;
+        padding: 10px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+      }
+      .img-div {
+        display: flex;
+        align-items: center;
+      }
+      .main-img {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+      }
+      .main-img img {
+        width: 100%;
+        height: 100%;
+      }
+      .recent-upload-content {
+        margin-left: 10px;
+      }
+      .recent-upload-content h1 {
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+      }
+      .recent-upload-content p {
+        font-size: 12px;
+        padding: 0;
+        margin: 0;
+      }
+      .action-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .configration-main {
+        background-color: #111;
+        padding: 20px;
+        border-radius: 20px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .configration {
+        width: 30%;
+      }
+
+      .configration h1 {
+        font-size: 20px;
+        margin: 0;
+        text-transform: capitalize;
+        padding-bottom: 10px;
+      }
+
+      .password-protection-div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .password-protection-div h1 {
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+        text-transform: capitalize;
+      }
+      .password-protection-div p {
+        font-size: 12px;
+        padding: 0;
+        margin: 0;
+        text-transform: capitalize;
+        color: #636161;
+      }
+      .form-row {
+        width: 65%;
+      }
+      .form-row h1 {
+        font-size: 20px;
+        margin: 0;
+        text-transform: capitalize;
+        padding-bottom: 10px;
+      }
+      .file-length {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      .file-length input {
+        width: 100%;
+        border: 1px solid rgb(21 21 21);
+        background-color: #0c0c0c;
+        border-radius: 10px;
+        padding: 10px;
+        color: #333;
+      }
+      .file-length label {
+        text-transform: capitalize;
+        font-size: 14px;
+      }
+      .file-length-main {
+        display: flex;
+        gap: 30px;
+      }
+      .embeded-layout {
+        margin: 40px 0px;
+      }
+
+      /****************************** Glow Effect Theme*******************/
+      .effect-heading svg {
+        margin-top: 5px;
+        margin-right: 1px;
+        margin-left: 7px;
+      }
+
+      .dropdown-effect {
+        padding: 0;
+
+        color: #fff;
+        border-radius: 5px;
+
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .dropdown-effect-header {
+        padding: 10px 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid rgb(21 21 21);
+        background-color: #0c0c0c;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .dropdown-background-list {
+        background-color: #0c0c0c;
+        margin-top: 7px;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .noExpand {
+        width: 8%;
+        display: none; /* Hide the dropdown by default */
+        position: absolute;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-effect-title {
+        margin: 0;
+        padding: 10px;
+        font-size: 0.8rem;
+        color: #fff;
+        display: flex;
+        text-decoration: none;
+        width: 100%;
+        transition: all 0.2s;
+      }
+
+      .dropdown-effect-icon {
+        display: flex;
+      }
+
+      .dropdown-effect-arrow {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .dropdown-effect.open .dropdown-effect-arrow {
+        transform: rotate(180deg);
+      }
+
+      .dropdown-effect.open .dropdown-arrow,
+      .dropdown-font.open .dropdown-font-arrow,
+      .dropdown-effect.open .dropdown-font-arrow {
+        transform: rotate(180deg);
+      }
+
+      .dropdown-effect-list {
+        background-color: #0c0c0c;
+        margin-top: 7px;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        width: 25%;
+      }
+
+      .dropdown-effect-item,
+      .user-effect-item,
+      .dropdown-discord-item,
+      .dropdown-background-item,
+      .server-presence-items,
+      .custom-effect-item {
+        padding: 10px;
+        font-size: 0.8rem;
+        color: #fff;
+        display: flex;
+        text-decoration: none;
+        width: 100%;
+        transition: all 0.2s;
+      }
+
+      .dropdown-effect-item:hover,
+      .user-effect-item:hover,
+      .server-presence-items:hover,
+      .dropdown-background-item:hover,
+      .dropdown-discord-items:hover,
+      .custom-effect-item:hover {
+        background-color: #2b2b2b49;
+        border-radius: 9px;
+      }
+      /******************************Badges Theme*******************/
+      .badge-heading {
+        margin-top: 5px;
+      }
+
+      .badge-heading svg {
+        margin-top: 5px;
+        margin-right: 1px;
+        margin-left: 7px;
+      }
+
+      .dropdown-badge {
+        padding: 0;
+
+        color: #fff;
+        border-radius: 5px;
+
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .dropdown-badge-header {
+        padding: 10px 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid rgb(21 21 21);
+        background-color: #0c0c0c;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .dropdown-badge-title {
+        margin: 0;
+      }
+
+      .dropdown-badge-icon {
+        display: flex;
+      }
+
+      .dropdown-badge-arrow {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .dropdown-badge.open .dropdown-badge-arrow {
+        transform: rotate(180deg);
+      }
+
+      .dropdown-badge-list {
+        background-color: #0c0c0c;
+        margin-top: 7px;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        width: 25%;
+      }
+
+      .dropdown-badge-item {
+        padding: 10px;
+        font-size: 0.8rem;
+        color: #fff;
+        display: flex;
+        text-decoration: none;
+        width: 100%;
+        transition: all 0.2s;
+      }
+
+      .dropdown-badge-item:hover {
+        background-color: #2b2b2b49;
+        border-radius: 9px;
+      }
+
+      /* ============MEDIA QUERIES START HERE====== */
+      @media only screen and (max-width: 1024px) and (min-width: 768px) {
+        .dropdown-badge-list,
+        .dropdown-effect-list {
+          width: 30%;
+        }
+      }
+      @media only screen and (max-width: 768px) and (min-width: 425px) {
+        .dropdown-badge-list,
+        .dropdown-effect-list {
+          width: 90%;
+        }
+        .second-part-top {
+          flex-direction: column;
+        }
+        .gallery-area {
+          width: 100%;
+          flex-direction: column;
+        }
+        .gallery-area-2 {
+          width: 100%;
+        }
+        .configration {
+          width: 100%;
+        }
+        .configration-main {
+          flex-direction: column;
+        }
+        .form-row {
+          width: 100%;
+        }
+        .file-length-main {
+          flex-direction: column;
+          gap: 15px;
+        }
+        .embeded-layout {
+          margin: 20px 0px;
+        }
+        .password-protected {
+          width: 100%;
+        }
+        .extension {
+          width: 100%;
+        }
+        .erase-all {
+          margin-top: 20px;
+        }
+        .save-buttons {
+          display: flex;
+          justify-content: space-between;
+          gap: 11px;
+          margin: 20px 0px 10px 0px;
+        }
+      }
+      @media only screen and (max-width: 460px) and (min-width: 320px) {
+        .dropdown-badge-list,
+        .dropdown-effect-list {
+          width: 83%;
+        }
+        .second-part-top {
+          flex-direction: column;
+        }
+        .gallery-area {
+          width: 100%;
+          flex-direction: column;
+        }
+        .gallery-area-2 {
+          width: 100%;
+        }
+        .configration {
+          width: 100%;
+        }
+        .configration-main {
+          flex-direction: column;
+        }
+        .form-row {
+          width: 100%;
+        }
+        .file-length-main {
+          flex-direction: column;
+          gap: 15px;
+        }
+        .embeded-layout {
+          margin: 20px 0px;
+        }
+        .password-protected {
+          width: 100%;
+        }
+        .extension {
+          width: 100%;
+        }
+        .erase-all {
+          margin-top: 20px;
+        }
+        .save-buttons {
+          display: flex;
+          justify-content: space-between;
+          gap: 11px;
+          margin: 20px 0px 10px 0px;
+        }
+      }
+      /* ============MEDIA QUERIES END HERE====== */
+      /*NEW */
+
+      .new-section {
+        background-color: #181819c9;
+        border-radius: 15px;
+        padding: 6px;
+        margin: 20px 0;
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        position: relative; /* Added for positioning the image */
+      }
+
+      .premium-offer {
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(
+          -79deg,
+          rgba(7, 3, 30, 1) 0%,
+          rgba(56, 39, 90, 1) 35%,
+          rgba(4, 1, 23, 1) 100%
+        );
+        width: 100%;
+        margin-bottom: 15px;
+        position: relative;
+      }
+
+      .premium-text {
+        text-align: center;
+        margin-top: 60px; /* Space for the hanging image */
+        position: relative; /* For positioning the text above the image */
+        z-index: 1; /* Ensure the text is above the image */
+      }
+
+      .premium-text p {
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+        margin: 0;
+      }
+
+      .premium-text span {
+        color: #ccc;
+        font-size: 16px;
+        margin-top: 5px;
+      }
+
+      .premium-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute; /* Allows the image to hang off */
+        top: -30px; /* Adjust this value to control how much the image hangs off */
+        z-index: 0; /* Ensure the image is behind the text */
+      }
+
+      .visit-button {
+        border: 1px solid #000000;
+        border-radius: 5px;
+        color: white;
+        background: linear-gradient(
+          -79deg,
+          rgba(7, 3, 30, 1) 0%,
+          rgba(56, 39, 90, 1) 35%,
+          rgba(4, 1, 23, 1) 100%
+        );
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+        display: flex;
+        align-items: center;
+      }
+
+      .visit-button:hover {
+        background: linear-gradient(
+          -79deg,
+          rgba(7, 3, 30, 0.87) 0%,
+          rgba(56, 39, 90, 0.849) 35%,
+          rgba(4, 1, 23, 0.61) 100%
+        );
+      }
+
+      .visit-button i {
+        margin-right: 5px;
+      }
+
+      .user-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Distribute space between items */
+        width: 100%;
+        background-color: #0e0e0e;
+        border-radius: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .user-info-container {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center the green dot */
+        width: 12px; /* Same as the width of the green dot */
+        height: 100%; /* Stretch to the height of the user-info */
+      }
+
+      .user-status {
+        width: 12px;
+        height: 12px;
+        background-color: #00ff00; /* Online status indicator */
+        border-radius: 50%;
+        flex-shrink: 0; /* Prevent the dot from shrinking */
+      }
+
+      .user-details {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 1;
+        overflow: hidden;
+        margin-left: 16px;
+        width: 100%;
+      }
+
+      .username,
+      .user-id {
+        color: white;
+        margin: 0;
+        font-size: 16px;
+        white-space: nowrap; /* Prevent text from wrapping */
+        overflow: hidden; /* Hide overflow text */
+        text-overflow: ellipsis; /* Show ellipsis when text overflows */
+      }
+
+      .options-button {
+        color: white;
+        cursor: pointer;
+        margin-left: 10px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <div class="sidebar-div">
+        <div>
+          <button id="cross-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 15 15"
+            >
+              <path
+                fill="currentColor"
+                d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27"
+              />
+            </svg>
+          </button>
+          <div class="logo-container">
+            <img id="logo-img" src="logo.png" alt="" />
+            <p id="logo-heading">twiz</p>
+          </div>
+          <div class="gradient-background">
+            <img id="gradient" src="Gradient1.png" alt="" />
+            <div class="profile-card">
+              <img
+                src="https://i.pinimg.com/originals/b8/4c/15/b84c1524359fe01b397af3ae210c4f36.gif"
+                alt="Profile Picture"
+              />
+              <p class="card-heading">Jacob Jones</p>
+              <button>View Profile</button>
+            </div>
+          </div>
+          <div class="menubar">
+            <div class="menu-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="white"
+                  d="M3 13h8V3H3zm0 8h8v-6H3zm10 0h8V11h-8zm0-18v6h8V3z"
+                />
+              </svg>
+              <a href="dashboard.html">Dashboard</a>
+            </div>
+            <div class="menu-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="white"
+                  d="M2 6c0-1.505.78-3.08 2-4c0 .845.69 2 2 2a3 3 0 0 1 3 3c0 .386-.079.752-.212 1.091a74.515 74.515 0 0 1 2.191 1.808l-2.08 2.08a75.852 75.852 0 0 1-1.808-2.191A2.977 2.977 0 0 1 6 10c-2.21 0-4-1.79-4-4m12.152 6.848l1.341-1.341A4.446 4.446 0 0 0 17.5 12A4.5 4.5 0 0 0 22 7.5c0-.725-.188-1.401-.493-2.007L18 9l-2-2l3.507-3.507A4.446 4.446 0 0 0 17.5 3A4.5 4.5 0 0 0 13 7.5c0 .725.188 1.401.493 2.007L3 20l2 2l6.848-6.848a68.562 68.562 0 0 0 5.977 5.449l1.425 1.149l1.5-1.5l-1.149-1.425a68.562 68.562 0 0 0-5.449-5.977"
+                />
+              </svg>
+              <a href="customize.html">Customize</a>
+            </div>
+            <div class="menu-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="none"
+                  stroke="white"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 5a2 2 0 1 0 4 0a2 2 0 1 0-4 0M3 19a2 2 0 1 0 4 0a2 2 0 1 0-4 0m14 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0m-8-5a3 3 0 1 0 6 0a3 3 0 1 0-6 0m3-7v4m-5.3 6.8l2.8-2m7.8 2l-2.8-2"
+                />
+              </svg>
+              <a href="social.html">Socials</a>
+            </div>
+            <div class="menu-item hover-item">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 32 32"
+              >
+                <circle cx="8" cy="26" r="1" fill="currentColor" />
+                <path
+                  fill="currentColor"
+                  d="M5 30h22c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2m0-6h22v4H5zm18-4H9c-3.31 0-6-2.69-6-6c0-3.05 2.29-5.58 5.25-5.95C9.13 4.55 12.33 2 16 2s6.87 2.55 7.75 6.05C26.71 8.42 29 10.95 29 14c0 3.31-2.69 6-6 6M8.95 10A4.01 4.01 0 0 0 5 14c0 2.21 1.79 4 4 4h14c2.21 0 4-1.79 4-4a4 4 0 0 0-3.94-4l-.12.01l-.88.02l-.12-.88C21.51 6.21 18.96 4 16 4s-5.51 2.21-5.93 5.15l-.12.88z"
+                />
+              </svg>
+              <a href="hosting.html">Hosting</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-outer">
+          <div class="new-section">
+            <div class="premium-offer">
+              <img
+                src="https://cdn.discordapp.com/attachments/1142576278910803989/1247691402809442304/Prem-img.png?ex=6660f2ab&is=665fa12b&hm=3b36881150ba934b0fd3ee083a42c64e0355d25bd8740a09ff8ce7297c9ed1d3&"
+                alt="Premium Image"
+                class="premium-image"
+              />
+              <div class="premium-text">
+                <p>Premium</p>
+                <span>Interested in Premium?</span>
+              </div>
+              <button class="visit-button">
+                <i class="fas fa-external-link-alt"></i>Visit
+              </button>
+            </div>
+            <div class="user-info">
+              <div class="user-info-container">
+                <div class="user-status"></div>
+              </div>
+              <div class="user-details">
+                <p class="username">omer</p>
+                <p class="user-id" style="color: #4e4e4e">UID: 36363</p>
+              </div>
+              <div class="options-button" id="options-button">⋮</div>
+            </div>
+
+            <!-- Dropdown Menu -->
+            <div class="dropdown-menu" id="dropdown-menu">
+              <a href="setting.html" id="settings-link"
+                ><i class="fas fa-cog"></i> &nbspSettings</a
+              >
+              <a href="#" id="logout-link"
+                ><i class="fas fa-sign-out-alt"></i> &nbspLogout</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .options-button {
+        color: white;
+        cursor: pointer;
+        margin-left: 10px;
+        font-size: 20px;
+        position: relative;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 153.3px;
+        width: 90%;
+        right: 8.7px;
+        background-color: #0e0e0e;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        overflow: hidden;
+        z-index: 1000;
+      }
+
+      .dropdown-menu a {
+        color: white;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-menu a:hover {
+        background-color: #141414;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const optionsButton = document.getElementById("options-button");
+        const dropdownMenu = document.getElementById("dropdown-menu");
+
+        optionsButton.addEventListener("click", function (event) {
+          event.stopPropagation(); // Prevent the click from propagating to the window
+          dropdownMenu.style.display =
+            dropdownMenu.style.display === "block" ? "none" : "block";
+        });
+
+        // Hide dropdown menu when clicking outside
+        window.addEventListener("click", function () {
+          if (dropdownMenu.style.display === "block") {
+            dropdownMenu.style.display = "none";
+          }
+        });
+      });
+    </script>
+
+    <div class="top-bar">
+      <button id="hamburger-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="none"
+            stroke="white"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 17h18M3 12h18M3 7h18"
+          />
+        </svg>
+      </button>
+      <div class="welcome">Welcome, Jacob</div>
+      <div class="top-btns">
+        <a href="shop.html" style="text-decoration: none">
+          <button id="upgrade">
+            <span
+              class="iconify"
+              data-icon="mdi-cart"
+              data-inline="false"
+              style="font-size: 14px; margin-bottom: -2px"
+            ></span>
+            Shop
+          </button>
+        </a>
+
+        <button id="not-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            viewBox="0 0 24 24"
+            style="margin-top: 3px"
+          >
+            <g fill="none">
+              <path
+                d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
+              />
+              <path
+                fill="white"
+                d="M15 19a2 2 0 0 1-1.85 1.995L13 21h-2a2 2 0 0 1-1.995-1.85L9 19zM12 2a7 7 0 0 1 6.996 6.76L19 9v3.764l1.822 3.644a1.1 1.1 0 0 1-.869 1.586l-.115.006H4.162a1.1 1.1 0 0 1-1.03-1.487l.046-.105L5 12.764V9a7 7 0 0 1 7-7"
+              />
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="dashboard-tab">
+        <div class="top-info">
+          <div class="info-card">
+            <div class="icon-heading">
+              <div class="">
+                <i
+                  class="fa-solid fa-circle-chevron-up"
+                  style="border-radius: 4px; font-size: 21px; padding: 3px"
+                ></i>
+              </div>
+              <div class="icons-content">
+                <h4>uploads</h4>
+                <h3>view how much storage was used</h3>
+              </div>
+            </div>
+            <p>216</p>
+          </div>
+          <div class="info-card">
+            <div class="icon-heading">
+              <div class="">
+                <i
+                  class="fa-solid fa-database"
+                  style="border-radius: 4px; font-size: 21px; padding: 3px"
+                ></i>
+              </div>
+              <div class="icons-content">
+                <h4>storage</h4>
+                <h3>view how much storage was used</h3>
+              </div>
+            </div>
+            <p>16.0MB</p>
+          </div>
+          <div class="info-card">
+            <div class="icon-heading">
+              <div class="">
+                <i
+                  class="fa-solid fa-font"
+                  style="border-radius: 4px; font-size: 21px; padding: 3px"
+                ></i>
+              </div>
+              <div class="icons-content">
+                <h4>text</h4>
+                <h3>text document was used</h3>
+              </div>
+            </div>
+            <p>10</p>
+          </div>
+          <div class="info-card">
+            <div class="icon-heading">
+              <div class="">
+                <i
+                  class="fa-solid fa-ring"
+                  style="border-radius: 4px; font-size: 21px; padding: 3px"
+                ></i>
+              </div>
+              <div class="icons-content">
+                <h4>premium hosting</h4>
+                <h3>fast reliable hosting</h3>
+              </div>
+            </div>
+            <div class="icons-button">
+              <button>active</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="second-part-top">
+          <div class="gallery-area">
+            <div class="password-protected">
+              <div class="password-feild">
+                <h1>password protected</h1>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="password"
+                />
+              </div>
+              <!-- <div class="select-feild">
+              <h1>upload tools</h1>
+              <select id="country" name="country" class="select-form">
+                <option value="australia">vedio</option>
+                <option value="canada">image</option>
+                <option value="usa">audio</option>
+              </select>
+            </div> -->
+              <div class="sidebar-item">
+                <div class="icon-label-container effect-heading">
+                  <label for="background-effects-select">
+                    <p>Upload Tools</p>
+                  </label>
+                </div>
+                <input name="" hidden="" id="effect-hidden-input3" />
+                <div id="dropdown-effect3" class="dropdown-effect">
+                  <div class="dropdown-effect-header">
+                    <span
+                      id="discord-input-effect3"
+                      class="dropdown-effect-title"
+                      >Choose An Option</span
+                    >
+                    <div class="dropdown-effect-icon">
+                      <svg
+                        class="dropdown-effect-arrow"
+                        width="20px"
+                        height="20px"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
+                          fill="#777"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="dropdown-effect-list noExpand"
+                    style="display: none"
+                  >
+                    <a
+                      href="#None"
+                      class="dropdown-effect-item"
+                      onclick="selectGlowEffect('None')"
+                      >None</a
+                    >
+                    <a
+                      href="#Enabled"
+                      class="dropdown-effect-item"
+                      onclick="selectGlowEffect('Enabled')"
+                      >Enabled</a
+                    >
+                    <a
+                      href="#Disabled"
+                      class="dropdown-effect-item"
+                      onclick="selectGlowEffect('Disabled')"
+                      >Disabled</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="password-feild">
+                <h1 class="license">license</h1>
+                <input
+                  type="text"
+                  id="password"
+                  name="password"
+                  class="password"
+                />
+              </div>
+              <div class="save-buttons">
+                <div class="save-button">
+                  <i
+                    class="fa-solid fa-download"
+                    style="
+                      border-radius: 4px;
+                      font-size: 21px;
+                      padding: 3px;
+                      color: #4d4d4d;
+                    "
+                  ></i>
+                  <button>save</button>
+                </div>
+
+                <div
+                  class="help-button"
+                  style="
+                    background-color: #fff7000f;
+                    border: 1px solid rgb(211 255 0 / 9%);
+                  "
+                >
+                  <i
+                    class="fa-solid fa-question"
+                    style="
+                      border-radius: 4px;
+                      font-size: 21px;
+                      padding: 3px;
+                      color: #4d4d4d;
+                    "
+                  ></i>
+                  <button>Help</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- extension feild star here -->
+            <div class="extension">
+              <div class="">
+                <h1>extensions</h1>
+                <a href="gallery.html" class="help-button">
+                  <i
+                    class="fa-brands fa-envira"
+                    style="
+                      border-radius: 4px;
+                      font-size: 21px;
+                      padding: 3px;
+                      color: #4d4d4d;
+                    "
+                  ></i>
+                  gallery
+                </a>
+              </div>
+
+              <div class="erase-all">
+                <a href="#" class="help-button">
+                  <i
+                    class="fa-regular fa-newspaper"
+                    style="
+                      border-radius: 4px;
+                      font-size: 21px;
+                      padding: 3px;
+                      color: #4d4d4d;
+                    "
+                  ></i>
+                  open embed editor
+                </a>
+              </div>
+
+              <!-------------------Custom Badges----------------->
+              <div class="sidebar-item">
+                <div class="icon-label-container badge-heading">
+                  <label for="background-badges-select">
+                    <p>Upload Tools</p>
+                  </label>
+                </div>
+                <input name="" hidden="" id="badge-hidden-input" />
+                <div id="dropdown-badge" class="dropdown-badge">
+                  <div class="dropdown-badge-header">
+                    <span id="discord-input-badge" class="dropdown-effect-title"
+                      >Choose An Option</span
+                    >
+                    <div class="dropdown-badge-icon">
+                      <svg
+                        class="dropdown-badge-arrow"
+                        width="20px"
+                        height="20px"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
+                          fill="#777"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="dropdown-badge-list noExpand"
+                    style="display: none"
+                  >
+                    <a
+                      href="#enable"
+                      class="dropdown-badge-item"
+                      onclick="dropdownForBadge('None')"
+                      >None</a
+                    >
+                    <a
+                      href="#enable"
+                      class="dropdown-badge-item"
+                      onclick="dropdownForBadge('Enabled')"
+                      >Enabled</a
+                    >
+                    <a
+                      href="#Disabled"
+                      class="dropdown-badge-item"
+                      onclick="dropdownForBadge('Disabled')"
+                      >Disabled</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="erase-all">
+                <a
+                  href="#"
+                  class="help-button"
+                  style="
+                    background-color: #ff00000f;
+                    border: 1px solid rgb(255 0 0 / 9%);
+                  "
+                >
+                  <i
+                    class="fa-solid fa-eraser"
+                    style="
+                      border-radius: 4px;
+                      font-size: 21px;
+                      padding: 3px;
+                      color: #4d4d4d;
+                    "
+                  ></i>
+                  erase all
+                </a>
+              </div>
+
+              <!-- <div class="select-feild">
+              <h1 class="upload-tool">upload tools</h1>
+              <select id="country" name="country" class="select-form">
+                <option value="australia">yahoo.com</option>
+                <option value="canada">google.com</option>
+                <option value="usa">audio</option>
+              </select>
+              <div class="erase-all">
+                <a href="#" class="help-button"style="
+                background-color: #ff00000f;
+                border: 1px solid rgb(255 0 0 / 9%);">
+                  <i
+                    class="fa-solid fa-eraser"
+                    style="
+                      border-radius: 4px;
+                      font-size: 21px;
+                      padding: 3px;
+                      color: #4d4d4d;
+                    "
+                  ></i>
+                  erase all
+                </a>
+              </div>
+            </div> -->
+            </div>
+          </div>
+          <div class="gallery-area-2">
+            <h1>recent uploads</h1>
+            <div class="recent-upload">
+              <div class="img-div">
+                <div class="main-img">
+                  <img src="./discordLogo.png" alt="" />
+                </div>
+                <div class="recent-upload-content">
+                  <h1>venish.png</h1>
+                  <p>uploaded by 56kb</p>
+                </div>
+              </div>
+              <div class="action-menu">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+            <div class="recent-upload">
+              <div class="img-div">
+                <div class="main-img">
+                  <img src="./discordLogo.png" alt="" />
+                </div>
+                <div class="recent-upload-content">
+                  <h1>venish.png</h1>
+                  <p>uploaded by 56kb</p>
+                </div>
+              </div>
+              <div class="action-menu">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+            <div class="recent-upload">
+              <div class="img-div">
+                <div class="main-img">
+                  <img src="./discordLogo.png" alt="" />
+                </div>
+                <div class="recent-upload-content">
+                  <h1>venish.png</h1>
+                  <p>uploaded by 56kb</p>
+                </div>
+              </div>
+              <div class="action-menu">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+            <div class="recent-upload">
+              <div class="img-div">
+                <div class="main-img">
+                  <img src="./discordLogo.png" alt="" />
+                </div>
+                <div class="recent-upload-content">
+                  <h1>venish.png</h1>
+                  <p>uploaded by 56kb</p>
+                </div>
+              </div>
+              <div class="action-menu">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3rd part start here -->
+        <div class="configration-main">
+          <div class="configration">
+            <h1>configration</h1>
+            <div class="password-protection-div">
+              <div class="">
+                <h1>password protection</h1>
+                <p>enable password for when sharing</p>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" checked="checked" />
+              </div>
+            </div>
+
+            <div class="password-protection-div">
+              <div class="">
+                <h1>invisiable url</h1>
+                <p>invisiable links when sharing file</p>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" checked="checked" />
+              </div>
+            </div>
+            <div class="password-protection-div">
+              <div class="">
+                <h1>discord embed</h1>
+                <p>show a discord embed on upload</p>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" checked="checked" />
+              </div>
+            </div>
+
+            <div class="password-protection-div">
+              <div class="">
+                <h1>anonymouse upload</h1>
+                <p>go invisiable and hidden</p>
+              </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" checked="checked" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <h1>settings</h1>
+            <div class="file-length-main">
+              <div class="file-length">
+                <label for="fname">file length</label>
+                <input type="number" id="fname" name="firstname" />
+              </div>
+              <div class="file-length">
+                <label for="fname">invalid name</label>
+                <input
+                  type="text"
+                  id="fname"
+                  class="firstname"
+                  name="firstname"
+                />
+              </div>
+            </div>
+            <div class="embeded-layout">
+              <div class="file-length">
+                <label for="fname">embed layouter</label>
+                <input type="text" id="fname" name="firstname" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const crossBtn = document.getElementById("cross-btn");
+        const sidebar = document.querySelector(".sidebar");
+
+        function toggleSidebar() {
+          sidebar.classList.toggle("active");
+          crossBtn.classList.toggle("show"); // Use class to manage visibility
+          hamburgerBtn.style.display = sidebar.classList.contains("active")
+            ? "none"
+            : "block";
+        }
+
+        hamburgerBtn.addEventListener("click", toggleSidebar);
+        crossBtn.addEventListener("click", function () {
+          sidebar.classList.remove("active");
+          this.classList.remove("show"); // Hide cross button
+          hamburgerBtn.style.display = "block"; // Show hamburger button
+        });
+      });
+
+      let previousBadge = null;
+      let previousGlowSelection = null;
+
+      // -------------------------glow effect--------------------------------------//
+      function selectGlowEffect(effect) {
+        const dropdownTitle = document.getElementById("discord-input-effect3");
+        const dropdownItems = document.querySelectorAll(
+          ".dropdown-effect-item"
+        );
+
+        if (previousGlowSelection !== null) {
+          dropdownItems.forEach((item) => {
+            if (item.textContent === previousGlowSelection) {
+              item.style.display = "block";
+            }
+          });
+        }
+
+        dropdownTitle.textContent = effect;
+
+        dropdownItems.forEach((item) => {
+          if (item.textContent === effect) {
+            item.style.display = "none";
+            previousGlowSelection = effect;
+          }
+        });
+      }
+      const dropdownHeaderEffect3 = document.querySelector(
+        "#dropdown-effect3 .dropdown-effect-header"
+      );
+      const dropdownEffect3 = document.getElementById("dropdown-effect3");
+      const dropdownArrowEffect3 = dropdownEffect3.querySelector(
+        ".dropdown-effect-arrow"
+      );
+      const dropdownListEffect3 = dropdownEffect3.querySelector(
+        ".dropdown-effect-list"
+      );
+      const inputEffectEnter3 = document.getElementById(
+        "discord-input-effect3"
+      );
+
+      dropdownHeaderEffect3.addEventListener("click", () => {
+        const isOpen = dropdownEffect3.classList.contains("open");
+        dropdownListEffect3.style.display = isOpen ? "none" : "block";
+        dropdownEffect3.classList.toggle("open", !isOpen); // Toggle the "open" class
+      });
+
+      const dropdownItemsEffect3 = dropdownEffect3.querySelectorAll(
+        ".dropdown-effect-item"
+      );
+      dropdownItemsEffect3.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          const selectedValue = e.target.textContent;
+          inputEffectEnter3.textContent = selectedValue;
+
+          dropdownEffect3.classList.remove("open"); // Remove the "open" class
+          dropdownListEffect3.style.display = "none";
+        });
+      });
+
+      // Clicking outside the dropdown will close it
+      window.addEventListener("click", (e) => {
+        if (!dropdownEffect3.contains(e.target)) {
+          dropdownListEffect3.style.display = "none";
+          dropdownEffect3.classList.remove("open"); // Remove the "open" class when clicking outside
+        }
+      });
+
+      // -------------------------Badges--------------------------------------//
+      const dropdownHeaderBadge = document.querySelector(
+        ".dropdown-badge-header"
+      );
+      const dropdownBadge = document.querySelector(".dropdown-badge");
+      const dropdownArrowBadge = document.querySelector(
+        ".dropdown-badge-arrow"
+      );
+      const dropdownListBadge = document.querySelector(".dropdown-badge-list");
+      const inputBadgeEnter = document.getElementById("discord-input-badge");
+
+      dropdownHeaderBadge.addEventListener("click", () => {
+        const isOpen = dropdownBadge.classList.contains("open");
+        dropdownListBadge.style.display = isOpen ? "none" : "block";
+        dropdownBadge.classList.toggle("open", !isOpen);
+        dropdownArrowBadge.classList.toggle("rotate", !isOpen);
+      });
+
+      const dropdownItemsBadge = document.querySelectorAll(
+        ".dropdown-badge-item"
+      );
+      dropdownItemsBadge.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          const selectedValue = e.target.textContent;
+          inputBadgeEnter.innerHTML = selectedValue;
+          dropdownBadge.classList.remove("open");
+          dropdownArrowBadge.classList.remove("rotate");
+          dropdownListBadge.style.display = "none";
+        });
+      });
+
+      window.addEventListener("click", (e) => {
+        if (!dropdownBadge.contains(e.target)) {
+          dropdownListBadge.style.display = "none";
+          dropdownBadge.classList.remove("open");
+          dropdownArrowBadge.classList.remove("rotate");
+        }
+      });
+
+      function dropdownForBadge(effect) {
+        const dropdownTitle = document.getElementById("discord-input-badge");
+        const dropdownItems = document.querySelectorAll(".dropdown-badge-item");
+        console.log(
+          "dropdownItems",
+          dropdownItems,
+          "effect",
+          effect,
+          "dropdownTitle",
+          dropdownTitle
+        );
+
+        if (previousBadge !== null) {
+          dropdownItems.forEach((item) => {
+            if (item.textContent === previousBadge) {
+              item.style.display = "block";
+            }
+          });
+        }
+
+        dropdownTitle.textContent = effect;
+        dropdownItems.forEach((item) => {
+          if (item.textContent === effect) {
+            item.style.display = "none";
+            previousBadge = effect;
+          }
+        });
+      }
+      //--------user log--------
+      document.addEventListener("DOMContentLoaded", function () {
+        const ellipsisIcon = document.getElementById("vertical-icon"); // Select the icon element by its ID
+        console.log("ellipsisIcon", ellipsisIcon);
+        ellipsisIcon.addEventListener("click", function () {
+          const dropdownMenu = document.getElementById("user-list"); // Get the dropdown menu element by its ID
+          console.log("dropdownMenu", dropdownMenu);
+          dropdownMenu.style.display =
+            dropdownMenu.style.display === "block" ? "none" : "block";
+        });
+      });
+    </script>
+  </body>
+</html>

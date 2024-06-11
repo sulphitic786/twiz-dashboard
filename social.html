@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+
+    <title>Social</title>
+    <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #0a0a0a;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar {
+            background-color: #0e0e0e;
+            width: 220px;
+            height: 100%;
+            /* padding: 20px; */
+            position: fixed;
+            padding-bottom: 4%;
+            padding-top: 10%;
+            border-left: hidden;
+            border-top: hidden;
+            border-bottom: hidden;
+            padding-top: 20px;
+            overflow: hidden;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        .top-bar {
+            padding: 20px 30px;
+            margin-left: 220px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-top: 40px;
+        }
+
+        .top-bar #upgrade {
+            background: linear-gradient(-79deg, rgba(7, 3, 30, 1) 0%, rgba(56, 39, 90, 1) 35%, rgba(4, 1, 23, 1) 100%);
+            border: 1px solid #ffffff12;
+            border-radius: 10px;
+            color: white;
+            padding: 10px 20px 8px;
+            border-radius: 10px;
+            font-size: 13px;
+            cursor: pointer;
+            font-family: 'Poppins' !important;
+        }
+        .top-bar #not-btn {
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 5px;
+            background: #141414;
+            border: 1px solid #202020;
+        }
+
+        .profile-card {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .profile-card img {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+        }
+
+        .profile-card .card-heading {
+            margin: 10px 0 0 0;
+            font-size: 17px;
+        }
+
+        .profile-card p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .profile-card button {
+            padding: 6px;
+            font-size: 10px;
+            background: #141414;
+            border: 1px solid #202020;
+            border-radius: 5px;
+            color: #d1d1d1;
+        }
+
+        .menubar {
+            padding-left: 20px;
+            padding-right: 20px;
+
+        }
+
+        .menubar a {
+            margin-left: 7px;
+        }
+
+        .menu-item {
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+
+            padding-left: 9px;
+            padding-right: 9px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+
+        .menu-item a {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .hover-item {
+            background-color: #14233a63;
+            border-radius: 6px;
+            background: linear-gradient(71deg, rgb(7 3 30 / 98%) 0%, rgb(56 39 90 / 41%) 35%, rgb(4 1 23 / 74%) 100%);
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .welcome {
+            font-size: 24px;
+        }
+
+        .top-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            width: 100%;
+        }
+
+        .gradient-background {
+            position: relative;
+            margin-bottom: 45px;
+        }
+
+        .profile-card {
+            position: relative;
+            z-index: 2;
+            /* Ensures the profile card is above the background image */
+        }
+
+        .gradient-background #gradient {
+            position: absolute;
+            top: -140px;
+            left: -60px;
+            width: 310%;
+            z-index: -1;
+            opacity: 40%;
+        }
+
+        #cross-btn {
+            display: flex;
+            background: #141414;
+            border: 2px solid #202020;
+            color: white;
+            border-radius: 9px;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            margin-left: auto;
+            display: none;
+        }
+
+        /* Styles that apply to all screen sizes */
+        .sidebar {
+            display: block;
+            /* Show sidebar by default */
+        }
+
+        #hamburger-btn {
+            display: none;
+            /* Hide hamburger button by default */
+        }
+
+        #cross-btn {
+            display: none;
+            /* Ensure cross button is hidden by default */
+        }
+
+
+
+        /* Small screens */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 220px;
+                /* Set sidebar width */
+                position: fixed;
+                box-shadow: 10px 0 10px rgba(0, 0, 0, .35);
+                top: 0;
+                left: 0;
+                /* Position sidebar to the left */
+                height: 100%;
+                /* Full height */
+                z-index: 1000;
+                /* Ensure sidebar is above other content */
+                transform: translateX(-100%);
+                /* Start off-screen */
+                transition: transform 0.3s ease-in-out;
+                /* Smooth transition */
+                display: block;
+                /* Ensure sidebar is display block for animation */
+                border-radius: 30px;
+            }
+
+            .sidebar.active {
+                transform: translateX(0%);
+                /* Slide in */
+            }
+            .sidebar.active {
+                transform: translateX(0%);
+                /* Slide in */
+            }
+
+            #hamburger-btn {
+                display: block;
+                z-index: 1001;
+
+                border-radius: 9px;
+                border: none;
+                background: #141414;
+                border: 2px solid #202020;
+                padding: 5px 8px;
+                position: absolute;
+                left: 25px;
+            }
+
+            #addedSocialLinks {
+                justify-content: center !important;
+            }
+
+            #cross-btn {
+                display: none;
+                /* Initially hidden, shown when sidebar is active */
+            }
+
+            #cross-btn.show {
+                display: flex;
+                /* Show when sidebar is open */
+            }
+
+            .top-bar {
+
+                margin-left: 0px;
+                display: flex;
+                align-items: center;
+                padding-top: 40px;
+                justify-content: center;
+
+            }
+
+            .top-btns {
+                display: none;
+
+            }
+
+            .content {
+                margin-left: 0px;
+            }
+        }
+
+
+        /* Hide the cross button on screens wider than 767px */
+        @media (min-width: 769px) {
+            #cross-btn {
+                display: none !important;
+                /* Use !important to override inline styles if necessary */
+            }
+
+            #hamburger-btn {
+                display: none !important;
+                /* Ensure the hamburger button is also hidden on larger screens */
+            }
+
+            .sidebar {
+                transform: none !important;
+                /* Reset any transformation applied on smaller screens */
+                display: block !important;
+                /* Ensure the sidebar is always shown on larger screens */
+            }
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0px 0 30px 0;
+        }
+
+        #logo-img {
+            width: 38px;
+            height: 38px;
+
+        }
+
+        #logo-heading {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        /* --------------------------------------------social page------------------------------------- */
+        main {
+            width: 100vw;
+            margin-top: 62px;
+            position: relative;
+            height: calc(100vh - 62px);
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            color: white;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .sidebar-item {
+            padding: 0px 12px;
+            border-radius: 4px;
+            color: #ffffff;
+        }
+
+
+        /* Thin scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            /* Width of the scrollbar */
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #0c0d0e;
+            /* Background color of the track */
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+            /* Color of the scrollbar handle */
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {}
+
+        @media screen and (max-width: 768px) {
+            .dropdown {
+                width: 100%;
+            }
+
+            #link-input {
+                width: 100%;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            #add-btn {
+                width: 100%;
+            }
+
+            .added-link-item {
+                /* flex-wrap: wrap; */
+                margin-bottom: 19px;
+            }
+
+            .link-container {
+                margin-top: 80px;
+            }
+
+            .added-link-header {
+                font-size: 0.6rem;
+            }
+
+            .added-link-input {
+                width: 50%;
+            }
+
+            #social-item-container {
+                display: flex;
+                gap: 5px;
+                flex-wrap: wrap;
+                justify-content: center !important;
+            }
+
+            .modal-content {
+                top: 50px !important;
+            }
+
+            .modal h2 {
+                text-align: center;
+                margin-top: 35px !important;
+            }
+
+        }
+
+
+        /*------------------------------------------- sidebar button styling----------------------------------------------- */
+        .card {
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            color: white;
+            text-align: center;
+            box-sizing: border-box;
+            position: relative;
+            background: #141414;
+            border: 1px solid #202020;
+        }
+
+        .content-card p {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .illustration {
+            margin: 20px 0;
+        }
+
+        .illustration img {
+            width: 100px;
+            height: auto;
+        }
+
+        .action-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .action-button button {
+            border: none;
+            background-color: #181818bd;
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .action-button button:focus {
+            outline: none;
+        }
+
+        .action-button {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            border: none;
+            background-color: #181818bd;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute;
+            bottom: -21px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .action-button button:focus {
+            outline: none;
+        }
+
+        #gradient-card {
+            position: absolute;
+            top: -150px;
+            left: -310px;
+            width: 310%;
+            opacity: 40%;
+        }
+
+        .inner-card {
+            overflow: hidden;
+            position: relative;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .sidebar-div {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* -------------------new styling----------------------------------- */
+        .social-links-container {
+
+            padding: 20px;
+            background-color: #111;
+            border-radius: 30px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .social-links-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: white;
+            /* Lighter text color for the title */
+        }
+
+        .add-social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            height: fit-content;
+            padding: 9px 15px;
+            background-color: #444;
+            /* Button background */
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            color: white;
+            font-size: 16px;
+            font-family: 'Satoshi', sans-serif;
+            background: linear-gradient(-79deg, rgb(7 3 30 / 73%) 0%, rgb(56 39 90 / 52%) 35%, rgb(4 1 23 / 64%) 100%);
+        }
+
+        .add-social-link:hover {
+            background-color: #555;
+            /* Button hover effect */
+        }
+
+        .add-social-link:focus {
+            outline: none;
+        }
+
+
+
+        #subheading {
+            font-size: 13px;
+            color: white;
+        }
+
+        /* -------------------------social icons modals-------------------------- */
+        /* Modal styles */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        .modal h2 {
+            text-align: center;
+
+        }
+
+        .modal-content {
+            margin: 15% auto;
+            padding: 20px;
+            width: 70%;
+            max-width: 570px;
+            position: relative;
+            height: fit-content;
+            border: 1px solid #202020;
+            border-radius: 40px;
+            background: #141414;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: rgba(0, 0, 0, 0.253)aaa;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+
+        .social-item:hover {
+            background: #14141402;
+        }
+
+        .added-social-link,
+        .social-item-detail,
+        .social-item {
+            display: flex;
+            background: #141414;
+            border: 1px solid #202020;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            border-radius: 30px;
+            padding: 9px 15px;
+            margin: 3px 0;
+        }
+
+        .social-item-detail {
+
+            padding: 4px 15px;
+            width: fit-content;
+        }
+
+        .added-social-link span,
+        .social-item-detail span,
+        .social-item span {
+            margin-left: 10px;
+        }
+
+        /* Add styles for each button based on your design requirements */
+        .added-social-link {
+            display: flex;
+            flex-direction: row;
+            width: 200px;
+            background-color: #181818;
+            border: 2px solid transparent;
+            border-radius: 15px;
+        }
+
+        .back {
+            color: #ddd;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+        }
+
+        .back {
+            right: auto;
+            left: 20px;
+            display: none;
+        }
+
+        .modal-header {
+            font-size: 24px;
+            text-align: center;
+            color: #ddd;
+        }
+
+        .input-container {
+            margin: 10px 0;
+            outline: none;
+            background-color: #0c0c0c;
+            border: none;
+            border-radius: 12px;
+            color: #ffff;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            background: none;
+            color: #ddd;
+            font-size: 16px;
+        }
+
+        .custom-url-button {
+            display: block;
+            width: 100%;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            background-color: #4e4e50;
+            color: white;
+            cursor: pointer;
+            text-align: left;
+            border-radius: 5px;
+        }
+
+        .save-button {
+            background-color: #181818;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            width: 100%;
+        }
+
+        .icon-plus {
+            float: right;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        #social-item-container {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .social-btns-above-div {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .social-item {
+            background-color: #0c0c0c;
+        }
+
+        /* -----------------------kbab menu styling---------------------------------- */
+        /* Style for the kebab menu */
+        .kebab-menu {
+            cursor: pointer;
+            font-size: 24px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #0c0c0c;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            min-width: 160px;
+            z-index: 1;
+            right: 10px;
+            top: 35px;
+            overflow: hidden;
+        }
+
+        .dropdown-menu a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #0c0c0c;
+        }
+
+        .show {
+            display: block;
+        }
+
+        /* -----------new styling-------------- */
+        .added-social-link {
+            /* Replace with the actual color from your theme */
+            border-radius: 15px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .added-social-link .icon-only {
+            background: #ffffff4f;
+            border-radius: 10px;
+            padding: 5px 10px;
+            margin-right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            width: 40px;
+        }
+
+        .added-social-link .icon-data-div {
+            flex-grow: 1;
+        }
+
+        .added-social-link .icon-data-div span:first-child {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .added-social-link .icon-data-div span:nth-child(2) {
+            display: block;
+            font-size: 14px;
+            color: #aaa;
+            /* Lighter text color for the username and like count */
+        }
+
+        .icon-data-div span:nth-child(2) {
+            white-space: nowrap;
+            /* Keep text on the same line */
+            overflow: hidden;
+            /* Hide overflow text */
+            text-overflow: ellipsis;
+            /* Show an ellipsis for overflow text */
+            max-width: 110px;
+            /* Set a maximum width for the text */
+            display: inline-block;
+            /* Use inline-block for width to be applied */
+        }
+
+
+        .tag-label {
+            background-color: #bb86fc;
+            /* Example purple background color */
+            color: white;
+            border-radius: 10px;
+            padding: 5px 10px;
+            font-size: 12px;
+            margin: 0 10px;
+        }
+
+        .kebab-menu {
+            font-size: 20px;
+            /* Adjust size as needed */
+            cursor: pointer;
+        }
+
+        /* CSS to style the active social item */
+        .social-item.active {
+
+            /* Darker background for active item */
+            border: 2px solid #fff;
+            /* White border for emphasis */
+        }
+
+        /* You can also add other styles like a different text color or shadow */
+        .social-item.active span {
+            color: #fff;
+            /* White text for active item */
+        }
+
+
+
+        /*---------------------new social heading topp stylinggg ------------------------ */
+        .social-heading-btn-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        /* --------------------the social link added cotnainer css-------------------------- */
+        #addedSocialLinks {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        /*NEW */
+
+.new-section {
+    background-color: #181819c9;
+    border-radius: 15px;
+    padding: 6px;
+    margin: 20px 0;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative; /* Added for positioning the image */
+}
+
+.premium-offer {
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(-79deg, rgba(7, 3, 30, 1) 0%, rgba(56, 39, 90, 1) 35%, rgba(4, 1, 23, 1) 100%);
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.premium-text {
+    text-align: center;
+    margin-top: 60px; /* Space for the hanging image */
+    position: relative; /* For positioning the text above the image */
+    z-index: 1; /* Ensure the text is above the image */
+}
+
+.premium-text p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+.premium-text span {
+    color: #ccc;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.premium-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute; /* Allows the image to hang off */
+    top: -30px; /* Adjust this value to control how much the image hangs off */
+    z-index: 0; /* Ensure the image is behind the text */
+}
+
+.visit-button {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    color: white;
+    background: linear-gradient(-79deg, rgba(7, 3, 30, 1) 0%, rgba(56, 39, 90, 1) 35%, rgba(4, 1, 23, 1) 100%);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.visit-button:hover {
+    background: linear-gradient(-79deg, rgba(7, 3, 30, 0.87) 0%, rgba(56, 39, 90, 0.849) 35%, rgba(4, 1, 23, 0.61) 100%);
+}
+
+.visit-button i {
+    margin-right: 5px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute space between items */
+    width: 100%;
+    background-color: #0e0e0e;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.user-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the green dot */
+    width: 12px; /* Same as the width of the green dot */
+    height: 100%; /* Stretch to the height of the user-info */
+}
+
+.user-status {
+    width: 12px;
+    height: 12px;
+    background-color: #00ff00; /* Online status indicator */
+    border-radius: 50%;
+    flex-shrink: 0; /* Prevent the dot from shrinking */
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    overflow: hidden;
+    margin-left: 16px;
+    width: 100%;
+}
+
+.username,
+.user-id {
+    color: white;
+    margin: 0;
+    font-size: 16px;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Show ellipsis when text overflows */
+}
+
+.options-button {
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 20px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-div">
+            <div>
+                <button id="cross-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 15 15">
+                        <path fill="currentColor"
+                            d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27" />
+                    </svg>
+                </button>
+                <div class="logo-container">
+                    <img id="logo-img" src="logo.png" alt="" />
+                    <p id="logo-heading">twiz</p>
+                </div>
+                <div class="gradient-background">
+                    <img id="gradient" src="Gradient1.png" alt="" />
+                    <div class="profile-card">
+                        <img src="https://i.pinimg.com/originals/b8/4c/15/b84c1524359fe01b397af3ae210c4f36.gif"
+                            alt="Profile Picture" />
+                        <p class="card-heading">Jacob Jones</p>
+                        <button>View Profile</button>
+                    </div>
+                </div>
+                <div class="menubar">
+                    <div class="menu-item ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                            <path fill="white" d="M3 13h8V3H3zm0 8h8v-6H3zm10 0h8V11h-8zm0-18v6h8V3z" />
+                        </svg>
+                        <a href="dashboard.html">Dashboard</a>
+                    </div>
+                    <div class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                            <path fill="white"
+                                d="M2 6c0-1.505.78-3.08 2-4c0 .845.69 2 2 2a3 3 0 0 1 3 3c0 .386-.079.752-.212 1.091a74.515 74.515 0 0 1 2.191 1.808l-2.08 2.08a75.852 75.852 0 0 1-1.808-2.191A2.977 2.977 0 0 1 6 10c-2.21 0-4-1.79-4-4m12.152 6.848l1.341-1.341A4.446 4.446 0 0 0 17.5 12A4.5 4.5 0 0 0 22 7.5c0-.725-.188-1.401-.493-2.007L18 9l-2-2l3.507-3.507A4.446 4.446 0 0 0 17.5 3A4.5 4.5 0 0 0 13 7.5c0 .725.188 1.401.493 2.007L3 20l2 2l6.848-6.848a68.562 68.562 0 0 0 5.977 5.449l1.425 1.149l1.5-1.5l-1.149-1.425a68.562 68.562 0 0 0-5.449-5.977" />
+                        </svg>
+                        <a href="customize.html">Customize</a>
+                    </div>
+                    <div class="menu-item hover-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                            <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M10 5a2 2 0 1 0 4 0a2 2 0 1 0-4 0M3 19a2 2 0 1 0 4 0a2 2 0 1 0-4 0m14 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0m-8-5a3 3 0 1 0 6 0a3 3 0 1 0-6 0m3-7v4m-5.3 6.8l2.8-2m7.8 2l-2.8-2" />
+                        </svg>
+                        <a href="social.html">Socials</a>
+                    </div>
+                    <div class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><circle cx="8" cy="26" r="1" fill="currentColor"/><path fill="currentColor" d="M5 30h22c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2m0-6h22v4H5zm18-4H9c-3.31 0-6-2.69-6-6c0-3.05 2.29-5.58 5.25-5.95C9.13 4.55 12.33 2 16 2s6.87 2.55 7.75 6.05C26.71 8.42 29 10.95 29 14c0 3.31-2.69 6-6 6M8.95 10A4.01 4.01 0 0 0 5 14c0 2.21 1.79 4 4 4h14c2.21 0 4-1.79 4-4a4 4 0 0 0-3.94-4l-.12.01l-.88.02l-.12-.88C21.51 6.21 18.96 4 16 4s-5.51 2.21-5.93 5.15l-.12.88z"/></svg>
+                        <a href="hosting.html">Hosting</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-outer">
+
+                <div class="new-section">
+                    <div class="premium-offer">
+                        <img src="https://cdn.discordapp.com/attachments/1142576278910803989/1247691402809442304/Prem-img.png?ex=6660f2ab&is=665fa12b&hm=3b36881150ba934b0fd3ee083a42c64e0355d25bd8740a09ff8ce7297c9ed1d3&" alt="Premium Image" class="premium-image">
+                        <div class="premium-text">
+                            <p>Premium</p>
+                            <span>Interested in Premium?</span>
+                        </div>
+                        <button class="visit-button">
+                            <i class="fas fa-external-link-alt"></i>Visit
+                        </button>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-info-container">
+                            <div class="user-status"></div>
+                        </div>
+                        <div class="user-details">
+                            <p class="username">omer</p>
+                            <p class="user-id"style="color: #4e4e4e;">UID: 36363</p>
+                        </div>
+                        <div class="options-button">⋮</div>
+                    </div>
+                </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="top-bar">
+        <button id="hamburger-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 17h18M3 12h18M3 7h18" />
+            </svg>
+        </button>
+        <div class="welcome">Welcome, Jacob</div>
+        <div class="top-btns">
+            <a href="shop.html" style="text-decoration: none;">
+                <button id="upgrade">
+                  <span class="iconify" data-icon="mdi-cart" data-inline="false" style="font-size: 14px; margin-bottom: -2px;"></span>
+                  Shop
+                </button>
+              </a>
+            <button id="not-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" style="
+        margin-top: 3px;
+    ">
+                    <g fill="none">
+                        <path
+                            d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                        <path fill="white"
+                            d="M15 19a2 2 0 0 1-1.85 1.995L13 21h-2a2 2 0 0 1-1.995-1.85L9 19zM12 2a7 7 0 0 1 6.996 6.76L19 9v3.764l1.822 3.644a1.1 1.1 0 0 1-.869 1.586l-.115.006H4.162a1.1 1.1 0 0 1-1.03-1.487l.046-.105L5 12.764V9a7 7 0 0 1 7-7" />
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div class="socials">
+            <div class="social-links-container">
+                <div class="social-heading-btn-container">
+
+                    <div class="upper-heading-container">
+                        <div class="social-links-title"><span class="iconify" data-icon="streamline:link-chain-solid"
+                                style="font-size: 20px; margin-right: 7px;"></span> Social links</div>
+                        <p id="subheading">People who visit your profile will see your social links.</p>
+                    </div>
+                    <div class="only-add-btn">
+                        <button class="add-social-link" id="myBtn">
+                            <span style="margin-right: 5px;" class="iconify" data-icon="gridicons:add-outline"></span>
+
+                            Add social link
+                        </button>
+                    </div>
+                </div>
+                <div class="social-btns-above-div">
+                    <div id="addedSocialLinks">
+
+                    </div>
+
+                </div>
+
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <span class="back">&#x3c;</span>
+                        <h2>Add Social Link</h2>
+                        <div id="social-item-container">
+
+                            <div class="social-item" data-name="Youtube">
+                                <span class="iconify" data-icon="openmoji:youtube" style="font-size: 24px;"></span>
+                                <span>Youtube</span>
+                            </div>
+                            <div class="social-item" data-name="Reddit">
+                                <span class="iconify" data-icon="logos:reddit-icon"></span>
+                                <span>Reddit</span>
+                            </div>
+                            <div class="social-item" data-name="Instagram">
+                                <span class="iconify" data-icon="skill-icons:instagram"></span>
+                                <span>Instagram</span>
+                            </div>
+                            <div class="social-item" data-name="Twitter">
+                                <span class="iconify" data-icon="logos:twitter"></span>
+                                <span>Twitter</span>
+                            </div>
+                            <div class="social-item" data-name="Tiktok">
+                                <span class="iconify" data-icon="logos:tiktok-icon"></span>
+                                <span>Tiktok</span>
+                            </div>
+                            <div class="social-item" data-name="Twitch">
+                                <span class="iconify" style="color: #5a3e85;" data-icon="simple-icons:twitch"></span>
+                                <span>Twitch</span>
+                            </div>
+                            <div class="social-item" data-name="Facebook">
+                                <span class="iconify" data-icon="logos:facebook"></span>
+                                <span>Facebook</span>
+                            </div>
+                            <div class="social-item" data-name="Tumblr">
+                                <span class="iconify" data-icon="icon-park:tumblr"></span>
+                                <span>Tumblr</span>
+                            </div>
+                            <div class="social-item" data-name="Spotify">
+                                <span class="iconify" data-icon="logos:spotify-icon"></span>
+                                <span>Spotify</span>
+                            </div>
+                            <div class="social-item" data-name="Soundcloud">
+                                <span class="iconify" data-icon="logos:soundcloud"></span>
+                                <span>Soundcloud</span>
+                            </div>
+                            <div class="social-item" data-name="Linktree">
+                                <span class="iconify" data-icon="ph:linktree-logo-fill"></span>
+                                <span>Linktree</span>
+                            </div>
+                            <div class="social-item" data-name="Discord">
+                                <span class="iconify" data-icon="skill-icons:discord"></span>
+                                <span>Discord</span>
+                            </div>
+                            <div class="social-item" data-name="Venmo">
+                                <span class="iconify" style="color: #0083ff;" data-icon="ion:logo-venmo"></span>
+                                <span>Venmo</span>
+                            </div>
+                            <div class="social-item" data-name="tiktok">
+                                <span class="iconify" data-icon="akar-icons:tiktok-fill"></span>
+                                <span>Tiktok</span>
+                            </div>
+                            <div class="social-item" data-name="telegram">
+                                <span class="iconify" data-icon="logos:telegram"></span>
+                                <span>Telegram</span>
+                            </div>
+                            <div class="social-item" data-name="github">
+                                <span class="iconify" data-icon="ant-design:github-filled"></span>
+                                <span>Github</span>
+                            </div>
+                            <div class="social-item" data-name="Steam">
+                                <span class="iconify" data-icon="bi:steam"></span>
+                                <span>Steam</span>
+                            </div>
+
+                            <div class="social-item" data-name="Cashapp">
+                                <span class="iconify" style="color: #57ec49;" data-icon="cib:cashapp"></span>
+                                <span>Cashapp</span>
+                            </div>
+                            <div class="social-item" data-name="paypal">
+                                <span class="iconify" data-icon="logos:paypal"></span>
+                                <span>paypal</span>
+                            </div>
+                            <div class="social-item" data-name="roblox">
+                                <span class="iconify" data-icon="simple-icons:roblox"></span>
+                                <span>Roblox</span>
+                            </div>
+                            <div class="social-item" data-name="snapchat">
+                                <span class="iconify" style="color: #FFFC00;" data-icon="basil:snapchat-solid"></span>
+                                <span>Snapchat</span>
+                            </div>
+                            <div class="social-item" id="custom-icon" data-name="custom">
+                                <span class="iconify" data-icon="ph:globe"></span>
+                                <span>Custom</span>
+                            </div>
+
+
+                        </div>
+
+
+                        <div id="customUrlSection" style="display: none;">
+                            <!-- Placeholder for the icon and name -->
+                            <div id="socialItemDetail" class="social-item-detail">
+                                <span class="iconify detail-icon"></span>
+                                <span class="detail-name"></span>
+                            </div>
+                            <div class="input-container">
+                                <input type="text" placeholder="https://website.com" id="social-link-input"
+                                    class="input-field">
+                            </div>
+                            <button class="save-button">Save</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburgerBtn = document.getElementById("hamburger-btn");
+            const crossBtn = document.getElementById("cross-btn");
+            const sidebar = document.querySelector(".sidebar");
+
+            function toggleSidebar() {
+                sidebar.classList.toggle("active");
+                crossBtn.classList.toggle("show"); // Use class to manage visibility
+                hamburgerBtn.style.display = sidebar.classList.contains("active") ? "none" : "block";
+            }
+
+            hamburgerBtn.addEventListener("click", toggleSidebar);
+            crossBtn.addEventListener("click", function () {
+                sidebar.classList.remove("active");
+                this.classList.remove("show"); // Hide cross button
+                hamburgerBtn.style.display = "block"; // Show hamburger button
+            });
+        });
+
+
+
+
+        // Function to toggle the dropdown menu
+        function toggleDropdown(element) {
+            element.nextElementSibling.classList.toggle('show');
+        }
+
+        // Function to delete a social link
+        function deleteSocialLink(element) {
+            element.closest('.added-social-link').remove();
+        }
+
+        // Function to reset the modal to its default state
+        function resetModal() {
+            document.getElementById('customUrlSection').style.display = 'none';
+            document.getElementById('social-item-container').style.display = 'flex';
+            document.querySelector('.back').style.display = 'none';
+            document.querySelector('.input-field').value = '';
+            document.querySelector('.save-button').disabled = true;
+            document.querySelectorAll('.social-item').forEach(item => item.classList.remove('active'));
+        }
+
+        function openEditModal(editButton) {
+            console.log(editButton)
+            var socialLinkDiv = editButton.closest('.added-social-link');
+            var socialName = socialLinkDiv.dataset.name;
+            console.log(socialName)
+            var currentUrl = socialLinkDiv.querySelector('input[type="url"]').value;
+            console.log(IconReturn(socialName))
+            var iconData = IconReturn(socialName); // Get the icon HTML
+            console.log(iconData)
+            // Update the icon and name in the custom URL section
+            var detailIcon = document.querySelector('#socialItemDetail .detail-icon');
+            var detailName = document.querySelector('#socialItemDetail .detail-name');
+            detailIcon.outerHTML = iconData; // Replace the icon
+            detailName.textContent = socialName;
+
+            // Set the input field value to the current URL
+            var inputField = document.querySelector('.input-field');
+            inputField.value = currentUrl;
+
+            // Enable the save button
+            var saveButton = document.querySelector('.save-button');
+            saveButton.disabled = false;
+            saveButton.dataset.editMode = 'true';
+            saveButton.dataset.editingElement = socialName;
+
+            // Show the modal
+            document.getElementById("myModal").style.display = "flex";
+
+            // Display the custom URL section and hide the social item list
+            document.getElementById('customUrlSection').style.display = 'block';
+            document.getElementById('social-item-container').style.display = 'none';
+            document.querySelector('.back').style.display = 'block';
+        }
+
+        function IconReturn(iconName) {
+            console.log(iconName)
+            var newIconHTML;
+            if (iconName === 'Reddit') {
+                newIconHTML = '<span class="iconify detail-icon" data-icon="logos:reddit-icon"></span>';
+            }
+            else if (iconName === "Youtube") {
+                newIconHTML = '<span class="iconify detail-icon" data-icon="logos:youtube-icon"></span>';
+            }
+            else if (iconName === "Instagram") {
+                newIconHTML = '<span class="iconify detail-icon" data-icon="skill-icons:instagram"></span>';
+            }
+            else if (iconName === "Twitter") {
+                newIconHTML = '<span class="iconify detail-icon" data-icon="logos:twitter"></span>';
+            }
+            else if (iconName === "Tiktok") {
+                newIconHTML = '<span class="iconify detail-icon" data-icon="logos:tiktok-icon"></span>';
+            }
+            else if (iconName === "Twitch") {
+                newIconHTML = '<span class="iconify detail-icon" style="color: #5a3e85;" data-icon="simple-icons:twitch"></span>';
+            }
+            else if (iconName === "Facebook") {
+                newIconHTML = '<span class="iconify detail-icon" data-icon="logos:facebook"></span>';
+            }
+            else if (iconName === "Tumblr") {
+                newIconHTML = '<span class="iconify detail-icon" data-icon="icon-park:tumblr"></span>';
+            }
+            else if (iconName === "Spotify") {
+                newIconHTML = '<span class="iconify detail-icon" data-icon="logos:spotify-icon"></span>';
+            }
+            else if (iconName === "Soundcloud") {
+                newIconHTML = '<span class="iconify detail-icon" data-icon="logos:soundcloud"></span>';
+            }
+            else if (iconName === "Linktree") {
+                newIconHTML = '<span class="iconify detail-icon" data-icon="ph:linktree-logo-fill"></span>';
+            }
+            else if (iconName === "Discord") {
+                newIconHTML = '<span class="iconify detail-icon" data-icon="skill-icons:discord"></span>';
+            }
+            else if (iconName === "Venmo") {
+                newIconHTML = '<span class="iconify detail-icon" style="color: #0083ff;"   data-icon="ion:logo-venmo"></span>';
+            }
+            else if (iconName === "tiktok") {
+                newIconHTML = '<span class="iconify detail-icon" data-icon="akar-icons:tiktok-fill"></span>';
+            }
+            else if (iconName === "telegram") {
+                newIconHTML = '<span class="iconify detail-icon" data-icon="logos:telegram"></span>';
+            }
+            else if (iconName === "github") {
+                newIconHTML = '<span class="iconify detail-icon" data-icon="ant-design:github-filled"></span>';
+            }
+            else if (iconName === "Steam") {
+                newIconHTML = '<span class="iconify detail-icon" data-icon="bi:steam"></span>';
+            }
+            else if (iconName === "Cashapp") {
+                newIconHTML = '<span class="iconify detail-icon" style="color: #57ec49;" data-icon="cib:cashapp"></span>';
+            }
+            else if (iconName === "paypal") {
+                newIconHTML = '<span class="iconify detail-icon"  data-icon="logos:paypal"></span>';
+            }
+            else if (iconName === "roblox") {
+                newIconHTML = '<span class="iconify detail-icon"  data-icon="simple-icons:roblox"></span>';
+            }
+            else if (iconName === "snapchat") {
+                newIconHTML = '<span class="iconify detail-icon"  style="color: #FFFC00;" data-icon="basil:snapchat-solid"></span>';
+            }
+            else if (iconName === "custom") {
+                newIconHTML = '<span class="iconify detail-icon"  data-icon="ph:globe"></span>';
+            }
+
+            else {
+                // Default or other cases can be handled here
+                newIconHTML = '<span class="iconify detail-icon" data-icon="logos:generic-icon"></span>';
+            }
+
+            return newIconHTML; // Return the HTML string
+        }
+
+        // Get the modal and button elements
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+
+        // When the add button is clicked, show the modal and reset any previous state
+        btn.onclick = function () {
+            resetModal();
+            modal.style.display = "flex";
+        }
+
+        // Event delegation for closing the modal and resetting it
+        window.onclick = function (event) {
+            if (event.target.classList.contains('close') || event.target == modal) {
+                modal.style.display = "none";
+                resetModal();
+            }
+        }
+
+        // Event delegation for editing a social link
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('edit-link')) {
+                event.preventDefault();
+                openEditModal(event.target);
+            }
+        });
+
+        // Event listener for the save button when editing or adding a new link
+        document.querySelector('.save-button').addEventListener('click', function () {
+            var inputField = document.querySelector('.input-field');
+            var isEditMode = this.dataset.editMode === 'true';
+            var editingElementName = this.dataset.editingElement;
+
+            if (isEditMode) {
+                var socialLinkDiv = document.querySelector(`.added-social-link[data-name="${editingElementName}"]`);
+                if (socialLinkDiv) {
+                    // Update the hidden input field
+                    socialLinkDiv.querySelector('input[type="url"]').value = inputField.value;
+                    // Update the display text for the URL. The selector may vary based on your HTML structure.
+                    // If the URL is the second span within .icon-data-div, the following will work:
+                    var linkDisplaySpan = socialLinkDiv.querySelector('.icon-data-div span:nth-child(2)');
+                    if (linkDisplaySpan) {
+                        linkDisplaySpan.textContent = inputField.value;
+                    }
+                }
+                // Reset edit mode indicators
+                this.dataset.editMode = 'false';
+                this.dataset.editingElement = '';
+                modal.style.display = "none";
+                resetModal();
+            } else {
+                var selectedSocialItem = document.querySelector('.social-item.active');
+                if (inputField.value.trim() && selectedSocialItem) {
+                    createSocialLink(selectedSocialItem, inputField.value);
+                    modal.style.display = "none";
+                    resetModal();
+                }
+            }
+        });
+        // Back button functionality
+        document.querySelector('.back').addEventListener('click', function () {
+            var socialItemsContainer = document.getElementById('social-item-container');
+            var customUrlSection = document.getElementById('customUrlSection');
+            socialItemsContainer.style.display = 'flex';
+            customUrlSection.style.display = 'none';
+            this.style.display = 'none';
+            // Also reset the input and save button states
+            var inputField = document.querySelector('.input-field');
+            var saveButton = document.querySelector('.save-button');
+            inputField.value = '';
+            saveButton.disabled = true;
+            saveButton.dataset.editMode = 'false';
+            saveButton.dataset.editingElement = '';
+        });
+
+        // Function to create and add a new social link
+        function createSocialLink(item, urlValue) {
+            var itemName = item.dataset.name;
+            console.log("creating")
+            // Check if a social link with the same name already exists
+            var existingLink = document.querySelector(`.added-social-link[data-name="${itemName}"]`);
+            if (existingLink) {
+                // Alert the user that the link already exists
+                alert(`${itemName} link already exists.`);
+                return;
+            }
+
+            var newIconHTML = item.querySelector('.iconify').outerHTML;
+            var newSocialLink = document.createElement('div');
+            newSocialLink.classList.add('added-social-link');
+            newSocialLink.dataset.name = itemName;
+            newSocialLink.innerHTML = `
+        <div class="icon-only">
+            ${newIconHTML}
+        </div>
+        <div class="icon-data-div">
+            <span>${itemName}</span>
+            <span>${urlValue}</span>
+        </div>
+        <div class="kebab-menu iconify" data-icon="mdi:dots-vertical" onclick="toggleDropdown(this)"></div>
+        <div class="dropdown-menu">
+            <a href="#" class="edit-link">Edit</a>
+            <a href="#" class="delete-link" onclick="deleteSocialLink(this)">Delete</a>
+        </div>
+        <input type="url" hidden value="${urlValue}">
+    `;
+            document.getElementById('addedSocialLinks').appendChild(newSocialLink);
+
+        }
+
+
+        // Update to handle clicking on any social item
+        document.querySelectorAll('.social-item').forEach(item => {
+            item.addEventListener('click', function () {
+                document.querySelectorAll('.social-item').forEach(item => item.classList.remove('active'));
+                this.classList.add('active');
+                let dataName = this.getAttribute('data-name');
+                console.log(dataName)
+                let iconData = IconReturn(dataName);
+                document.getElementById('customUrlSection').style.display = 'block';
+                document.getElementById('social-item-container').style.display = 'none';
+                document.querySelector('.back').style.display = 'block';
+                document.querySelector('#customUrlSection #socialItemDetail').outerHTML = `<div id="socialItemDetail" class="social-item-detail">
+                    ${iconData}
+                    <span class="detail-name">${dataName}</span>
+                    </div>`
+                // Enable save button if there's text in the input
+                var inputField = document.querySelector('.input-field');
+                document.querySelector('.save-button').disabled = !inputField.value.trim();
+            });
+        });
+
+        // Input field event listener for enabling/disabling the save button
+        document.querySelector('.input-field').addEventListener('input', function () {
+            document.querySelector('.save-button').disabled = !this.value.trim();
+        });
+
+
+        // Function to close all open dropdown menus
+        function closeAllDropdowns() {
+            document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                menu.classList.remove('show');
+            });
+        }
+
+        // Event listener to close dropdown menus when clicking outside
+        document.addEventListener('click', function (event) {
+            var isKebabMenu = event.target.classList.contains('kebab-menu');
+            var isDropdownItem = event.target.closest('.dropdown-menu');
+
+            if (!isKebabMenu && !isDropdownItem) {
+                closeAllDropdowns();
+            }
+        });
+    </script>
+</body>
+
+</html>
